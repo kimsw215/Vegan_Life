@@ -8,4 +8,5 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="basiccolor">#FF5FC476</color>
+    <color name="splashback">#FF1BB554</color>
 </resources>
