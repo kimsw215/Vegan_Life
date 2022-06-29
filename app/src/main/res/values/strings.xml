@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Vegan_Life</string>
+    <string name="KAKAO_API_KEY">ae9dd319c362c728157d2407bbce7672</string>
 </resources>

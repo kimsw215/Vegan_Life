@@ -8,5 +8,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="basiccolor">#FF5FC476</color>
-    <color name="splashback">#FF1BB554</color>
+    <color name="primaycolor">#FF1BB554</color>
+    <color name="graycolor">#8F9090</color>
+    <color name="joincolor">#6BB0EA</color>
+    <color name="hintcolor">#BBBABF</color>
+    <color name="stroke">#E8E8EA</color>
+    <color name="loginback">#FF1BB554</color>
+    <color name="unabletetxt">#D2D1D4</color>
+    <color name="unablebutton">#F1F2F5</color>
 </resources>
