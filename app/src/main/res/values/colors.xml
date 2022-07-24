@@ -16,4 +16,17 @@
     <color name="loginback">#FF1BB554</color>
     <color name="unabletetxt">#D2D1D4</color>
     <color name="unablebutton">#F1F2F5</color>
+    <color name="randingpage">#D9D9D9</color>
+    <color name="randingbtn">#FAFAFA</color>
+    <color name="join_four_text_color">#313131</color>
+    <color name="vegan">#EDFAD9</color>
+    <color name="vegan_strok">#A3E440</color>
+    <color name="lacto">#FDEDD5</color>
+    <color name="lacto_stroke">#FF9900</color>
+    <color name="obo">#FFFACC</color>
+    <color name="obo_strok">#FEF63A</color>
+    <color name="lactoobo">#FEF5D9</color>
+    <color name="lactoobo_strok">#FED73A</color>
+    <color name="fesco">#F0F7FD</color>
+    <color name="fesco_strok">#00A3FF</color>
 </resources>

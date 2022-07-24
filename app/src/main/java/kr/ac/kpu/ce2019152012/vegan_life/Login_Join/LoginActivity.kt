@@ -11,21 +11,19 @@ import kr.ac.kpu.ce2019152012.vegan_life.databinding.ActivityLoginBinding
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding : ActivityLoginBinding
 
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        binding.joinText.paintFlags = Paint.UNDERLINE_TEXT_FLAG
-
         binding.editPw.addTextChangedListener {
-            if(it!!.length > 4){
+            if(it!!.length >= 1){
+                binding.pwtextField.isHintEnabled = false
                 binding.loginBtn.isClickable = true
                 binding.loginBtn.isEnabled = true
             } else {
+                binding.pwtextField.isHintEnabled = false
                 binding.loginBtn.isClickable = false
                 binding.loginBtn.isEnabled = false
             }
