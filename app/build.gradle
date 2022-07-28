@@ -58,14 +58,17 @@ dependencies {
     implementation group: 'com.kakao.sdk', name: 'kakaolink', version: '1.30.5'
 
     // 파이어 베이스 커스텀 로그인, 데이터 베이스
-    implementation 'com.google.firebase:firebase-analytics-ktx:21.0.0'
-    implementation 'com.google.firebase:firebase-auth-ktx:21.0.5'
+    implementation 'com.google.firebase:firebase-analytics-ktx:21.1.0'
+    implementation 'com.google.firebase:firebase-auth-ktx:21.0.6'
     implementation 'com.google.firebase:firebase-database-ktx:20.0.5'
-    implementation 'com.google.firebase:firebase-firestore-ktx:24.1.2'
+    implementation 'com.google.firebase:firebase-firestore-ktx:24.2.1'
     implementation 'com.google.firebase:firebase-storage-ktx:20.0.1'
-    implementation 'com.google.firebase:firebase-messaging:23.0.5'
+    implementation 'com.google.firebase:firebase-messaging:23.0.6'
     implementation platform('com.google.firebase:firebase-bom:29.1.0')
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+
+    // 원형 프로필 라이브러리
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 
     // Glide
     // https://github.com/bumptech/glide
@@ -73,6 +76,6 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.13.0'
 
     //뷰모델(ViewModel)
-    implementation"androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.1"
-    implementation"androidx.lifecycle:lifecycle-livedata-ktx:2.4.1"
+    implementation"androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.0"
+    implementation"androidx.lifecycle:lifecycle-livedata-ktx:2.5.0"
 }

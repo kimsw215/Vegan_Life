@@ -85,15 +85,16 @@
                 android:layout_marginTop="32dp"
                 android:text="프로필 이미지를 등록해주세요."
                 android:textColor="@color/black"
-                android:textSize="15dp"
+                android:textSize="16dp"
                 android:textStyle="bold"
                 app:layout_constraintStart_toStartOf="@+id/txt_subtitle2"
                 app:layout_constraintTop_toBottomOf="@+id/txt_subtitle2" />
 
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/join_image"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:src="@drawable/join_person"
                 app:layout_constraintBottom_toBottomOf="@+id/txt_insert"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -239,15 +240,14 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_pw2" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/login_btn"
+                android:id="@+id/next_btn"
                 android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="50dp"
-                android:background="@drawable/join_vegan_background_stroke"
-                android:enabled="false"
+                android:background="@color/primaycolor"
                 android:text="다음"
-                android:textColor="@color/selector_textcolor"
+                android:textColor="@color/white"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/join_pw2"

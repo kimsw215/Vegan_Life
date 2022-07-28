@@ -18,6 +18,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vegan_Life_noactionbar"
         tools:targetApi="31">
+
         <activity
             android:name=".Login_Join.JoinCompleteActivity"
             android:exported="true" />

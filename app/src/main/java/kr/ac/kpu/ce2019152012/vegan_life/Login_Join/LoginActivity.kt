@@ -1,5 +1,6 @@
 package kr.ac.kpu.ce2019152012.vegan_life.Login_Join
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Paint
 import androidx.appcompat.app.AppCompatActivity
@@ -16,6 +17,11 @@ class LoginActivity : AppCompatActivity() {
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        binding.joinBtn.setOnClickListener {
+            val intent = Intent(this,JoinStepOneActivity::class.java)
+            startActivity(intent)
+        }
 
         binding.editPw.addTextChangedListener {
             if(it!!.length >= 1){

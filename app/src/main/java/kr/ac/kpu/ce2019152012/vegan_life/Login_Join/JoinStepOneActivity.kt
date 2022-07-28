@@ -5,23 +5,56 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.graphics.Paint
 import android.net.Uri
 import android.os.Build
 import android.os.Parcelable
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
+import androidx.core.widget.addTextChangedListener
+import androidx.core.widget.doAfterTextChanged
+import com.bumptech.glide.Glide
 import kr.ac.kpu.ce2019152012.vegan_life.DataVo.JoinDataVo
+import kr.ac.kpu.ce2019152012.vegan_life.R
 import kr.ac.kpu.ce2019152012.vegan_life.databinding.ActivityJoinOneBinding
 import org.w3c.dom.Text
+import java.util.regex.Pattern
 
 class JoinStepOneActivity : AppCompatActivity() {
-
     private lateinit var binding : ActivityJoinOneBinding
 
+    private lateinit var JoinData: ArrayList<JoinDataVo>
+
+    // Uri 받아오기 위한 전역 함수
+    var ImgUri : Uri?= null
+    // 닉네임 참인지 체크
+    private var NickNameCheck : Boolean = false
+
+    // 이메일 참인지 체크
+    private var EmailCheck : Boolean = false
+
+    // 비밀번호 참인지 체크
+    private var PasswordCheck  : Boolean = false
+
+    // 비밀번호 재입력이 비밀번호와 같은지 체크
+    private var Password2Check: Boolean = false
+
+    // 이메일 검사 정규식
+    val emailValidation = "^[_A-Za-z0-9-]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$"
+
+    //비밀번호 조합 정규식
+    val passwordValidation = "^(?=.*[a-zA-Z0-9])(?=.*[a-zA-Z!@#\$%^&*])(?=.*[0-9!@#\$%^&*]).{8,15}\$"
+
+     /*
+    숫자,문자,특수문자 중 2가지 이상 조합
+    ^(?=.*[a-zA-Z0-9])(?=.*[a-zA-Z!@#$%^&*])(?=.*[0-9!@#$%^&*]).{8,15}$
+    */
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +63,7 @@ class JoinStepOneActivity : AppCompatActivity() {
 
         binding.joinInsertImage.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 
+        // 이미지 올리기 버튼을 눌렀을 때 프로필 변경하기
         binding.joinInsertImage.setOnClickListener {
             when {
                 // 갤러리 접근 권한이 있는 경우
@@ -54,10 +88,74 @@ class JoinStepOneActivity : AppCompatActivity() {
                 )
             }
         }
+
+        // 닉네임
+        // 추 후에 중복 체크 할 예정
+        binding.joinNickname.doAfterTextChanged {
+            if(it!!.length < 2 || it!!.length > 9){
+                NickNameCheck = false
+                Toast.makeText(this,"닉네임 사이즈를 맞춰주세요.",Toast.LENGTH_SHORT).show()
+            } else {
+                NickNameCheck = true
+            }
+        }
+
+        // 이메일
+        binding.joinEmail.addTextChangedListener(object : TextWatcher{
+            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                // text가 변경된 후 호출
+                // s에는 변경 후의 문자열이 담겨 있다.
+            }
+
+            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                // text가 변경되기 전 호출
+                // s에는 변경 전 문자열이 담겨 있다.
+            }
+
+            override fun afterTextChanged(p0: Editable?) {
+                // text가 바뀔 때마다 호출된다.
+                checkEmail()
+            }
+        })
+
+        // 비밀번호
+        binding.joinPw.doAfterTextChanged {
+            checkPassword()
+        }
+        // 비밀번호 재입력 확인
+        binding.joinPw2.doAfterTextChanged {
+            if(binding.joinPw.text.toString().trim() == binding.joinPw2.text.toString().trim()){
+                binding.joinPw2.setBackgroundResource(R.drawable.button_background_stroke)
+                Password2Check = true
+            } else {
+                binding.joinPw2.setBackgroundResource(R.drawable.edit_fail_background_stroke)
+                Password2Check = false
+                Toast.makeText(this,"비밀번호를 확인해주세요.",Toast.LENGTH_SHORT).show()
+            }
+        }
+
+        // 다음 버튼
+        binding.nextBtn.setOnClickListener {
+            if(NickNameCheck && EmailCheck && PasswordCheck && Password2Check){
+                // 정보 넘겨줘야 됨
+                /*JoinData.apply {
+                    add(JoinDataVo(ImgUri,binding.joinNickname.text.toString().trim(),
+                    binding.joinEmail.text.toString().trim(),binding.joinPw.text.toString().trim()))
+                }*/
+                val Data = JoinDataVo(ImgUri,binding.joinNickname.text.toString().trim(),
+                    binding.joinEmail.text.toString().trim(),binding.joinPw.text.toString().trim())
+                // 정보 넘겨 줄 때 사진이 있는 지 없는 지 체크 후 있으면 uri 그대로 보내고 아니면 0 보내기기
+               val intent = Intent(this,JoinStepTwoActivity::class.java)
+//                intent.putParcelableArrayListExtra("Join",JoinData)
+                intent.putExtra("Join",Data)
+                startActivity(intent)
+            } else{
+                Toast.makeText(this,"필수정보가 미기입되어있습니다.",Toast.LENGTH_SHORT).show()
+            }
+        }
     }
 
     // 권한 요청 승인 이후 실행되는 함수
-
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -98,6 +196,8 @@ class JoinStepOneActivity : AppCompatActivity() {
                 val selectedImageUri: Uri? = data?.data
                 if (selectedImageUri != null){
                     binding.joinImage.setImageURI(selectedImageUri)
+                    ImgUri = selectedImageUri
+//                    Glide.with(this).load(selectedImageUri).circleCrop().into(binding.joinImage)
                 } else {
                     Toast.makeText(this, "사진을 가져오지 못했습니다.", Toast.LENGTH_SHORT).show()
                 }
@@ -119,5 +219,38 @@ class JoinStepOneActivity : AppCompatActivity() {
             .setNegativeButton("취소"){_, _ ->}
             .create()
             .show()
+    }
+
+    // 이메일 형식 체크
+    fun checkEmail():Boolean{
+        val p = Pattern.matches(emailValidation, binding.joinEmail.text.toString().trim()) // 서로 패턴이 맞는지 체크
+        if (p) {
+            //이메일 형태가 정상일 경우
+            binding.joinEmail.setBackgroundResource(R.drawable.button_background_stroke)
+            EmailCheck = true
+            return true
+        } else {
+            binding.joinEmail.setBackgroundResource(R.drawable.edit_fail_background_stroke)
+            EmailCheck = false
+            Toast.makeText(this,"이메일 형식이 아닙니다.",Toast.LENGTH_SHORT)
+            //또는 binding.joinEmail.setTextColor(R.color.red.toInt())
+            return false
+        }
+    }
+
+    // 비밀번호 형식 체크
+    fun checkPassword():Boolean{
+        val p = Pattern.matches(passwordValidation, binding.joinPw.text.toString().trim()) // 서로 패턴이 맞닝?
+        if (p) {
+            //비밀번호 형태가 정상일 경우
+            binding.joinPw.setBackgroundResource(R.drawable.button_background_stroke)
+            PasswordCheck = true
+            return true
+        } else {
+            binding.joinPw.setBackgroundResource(R.drawable.edit_fail_background_stroke)
+            PasswordCheck = false
+            Toast.makeText(this,"패스워드 형식이 아닙니다.",Toast.LENGTH_SHORT)
+            return false
+        }
     }
 }
