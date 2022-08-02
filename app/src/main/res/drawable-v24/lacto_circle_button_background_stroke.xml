@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:state_checked="false">
+    <item android:state_selected="false">
         <shape android:shape="oval">
             <solid android:color="@color/lacto"/>
             <size android:width="66dp" android:height="66dp"/>
         </shape>
     </item>
 
-    <item android:state_checked="true">
+    <item android:state_selected="true">
         <shape android:shape="oval">
-            <solid android:color="@color/vegan" />
+            <solid android:color="@color/lacto" />
             <size android:width="80dp" android:height="80dp"/>
             <stroke android:width="1dp" android:color="@color/lacto_stroke" />
         </shape>
