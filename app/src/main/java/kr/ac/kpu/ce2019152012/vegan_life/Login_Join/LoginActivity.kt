@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.joinBtn.setOnClickListener {
-            val intent = Intent(this,JoinStepOneActivity::class.java)
+            val intent = Intent(this,JoinStepTwoActivity::class.java)
             startActivity(intent)
         }
 
