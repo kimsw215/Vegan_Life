@@ -10,7 +10,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val keyHash = Utility.getKeyHash(this)//onCreate 안에 입력해주자
-        Log.d("Hash", keyHash)
+/*        val keyHash = Utility.getKeyHash(this)//onCreate 안에 입력해주자
+        Log.d("Hash", keyHash)*/
     }
 }

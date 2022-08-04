@@ -3,10 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="kr.ac.kpu.ce2019152012.vegan_life">
     <!-- 인터넷 사용 권한 -->
-    <uses-permission android:name="android.permission.INTERNET" />
-
-    <!-- 갤러리 접근 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.INTERNET" /> <!-- 갤러리 접근 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -18,7 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vegan_Life_noactionbar"
         tools:targetApi="31">
-
+        <activity
+            android:name=".CalendarFragment"
+            android:exported="false" />
         <activity
             android:name=".Login_Join.JoinCompleteActivity"
             android:exported="true" />

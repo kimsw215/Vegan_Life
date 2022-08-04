@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <activity
+        android:id="@+id/comunityFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.ComunityFragment"
+        android:label="ComunityFragment" />
+    <activity
+        android:id="@+id/homeFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.HomeFragment"
+        android:label="HomeFragment" />
+    <activity
+        android:id="@+id/myFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.MyFragment"
+        android:label="MyFragment" />
+    <activity
+        android:id="@+id/recipeFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.RecipeFragment"
+        android:label="RecipeFragment" />
+    <activity
+        android:id="@+id/calendarFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.CalendarFragment"
+        android:label="fragment_calendar"
+        tools:layout="@layout/fragment_calendar" />
+</navigation>

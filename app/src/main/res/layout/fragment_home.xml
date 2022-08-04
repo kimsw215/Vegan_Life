@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainFragments.CalendarFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/home_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginTop="88dp"
+                android:src="@drawable/join_person"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.116"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/home_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="고양이님,"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/home_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.117"
+                app:layout_constraintStart_toEndOf="@+id/home_image"
+                app:layout_constraintTop_toTopOf="@+id/home_image"
+                app:layout_constraintVertical_bias="0.121" />
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="오늘도 건강한 채식하세요!"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="@+id/home_nickname"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/home_nickname"
+                app:layout_constraintTop_toBottomOf="@+id/home_nickname" />
+
+
+            <TextView
+                android:id="@+id/rest_kcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:text="오늘의 잔여 칼로리는 250kcal 입니다."
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/home_image"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/home_image"
+                app:layout_constraintTop_toBottomOf="@+id/home_image" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                android:layout_width="330dp"
+                android:layout_height="12dp"
+                android:layout_marginTop="8dp"
+                android:max="100"
+                android:progress="50"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/rest_kcal"
+                app:layout_constraintTop_toBottomOf="@+id/rest_kcal" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/carcontainer"
+                android:layout_width="105dp"
+                android:layout_height="108dp"
+                android:layout_marginTop="40dp"
+                android:background="@drawable/home_back1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/progressBar"
+                app:layout_constraintTop_toBottomOf="@+id/progressBar">
+
+
+                <ImageView
+                    android:id="@+id/car_rice"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_marginTop="9dp"
+                    android:layout_marginLeft="9dp"
+                    android:src="@drawable/rice"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.077"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/proteincontainer"
+                android:layout_width="110dp"
+                android:layout_height="113dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/home_back2"
+                app:layout_constraintStart_toEndOf="@+id/carcontainer"
+                app:layout_constraintTop_toTopOf="@+id/carcontainer">
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fatcontainer"
+                android:layout_width="110dp"
+                android:layout_height="113dp"
+                android:background="@drawable/home_back3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.322"
+                app:layout_constraintStart_toEndOf="@+id/proteincontainer"
+                app:layout_constraintTop_toTopOf="@+id/proteincontainer">
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
