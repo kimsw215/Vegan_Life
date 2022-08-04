@@ -11,9 +11,9 @@
 
     <item android:state_selected="true">
         <shape>
-            <size android:height="25dp" android:width="100dp"/>
+            <size android:height="30dp" android:width="100dp"/>
             <corners android:radius="30dp"/>
-            <stroke android:width="2dp" android:color="@color/primaycolor"/>
+            <stroke android:width="3dp" android:color="@color/primaycolor"/>
         </shape>
 
     </item>
