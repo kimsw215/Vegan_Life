@@ -41,7 +41,7 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
                 android:background="@color/randingpage"
                 android:elevation="1dp"
                 android:orientation="vertical"

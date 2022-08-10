@@ -1,9 +1,418 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainFragments.CalendarFragment">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:id="@+id/day_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="금요일"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/datetime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="2022-08-05"
+                android:textColor="@color/unabletetxt"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/day_title"
+                app:layout_constraintStart_toStartOf="@+id/day_title"
+                app:layout_constraintTop_toBottomOf="@+id/day_title" />
+
+            <ImageButton
+                android:id="@+id/calendar_btn_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/calendar_back"
+                app:layout_constraintEnd_toStartOf="@+id/day_title"
+                app:layout_constraintHorizontal_bias="0.237"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageButton
+                android:id="@+id/calendar_btn_front"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/calendar_front"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.782"
+                app:layout_constraintStart_toEndOf="@+id/day_title"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/carcontainer"
+                android:layout_width="105dp"
+                android:layout_height="113dp"
+                android:layout_marginStart="36dp"
+                android:layout_marginTop="28dp"
+                android:background="@drawable/home_back1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/datetime">
+
+
+                <ImageView
+                    android:id="@+id/car_rice"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="9dp"
+                    android:src="@drawable/rice"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.077"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/car_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="탄수화물"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/car_rice"
+                    app:layout_constraintTop_toBottomOf="@+id/car_rice" />
+
+                <TextView
+                    android:id="@+id/car_intake_kacl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="125g"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/car_name"
+                    app:layout_constraintTop_toBottomOf="@+id/car_name" />
+
+                <TextView
+                    android:id="@+id/car_kcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="/200g"
+                    android:textColor="@color/unabletetxt"
+                    android:textSize="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/car_intake_kacl"
+                    app:layout_constraintTop_toBottomOf="@+id/car_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/proteincontainer"
+                android:layout_width="105dp"
+                android:layout_height="113dp"
+                android:layout_marginStart="8dp"
+                android:background="@drawable/home_back2"
+                app:layout_constraintStart_toEndOf="@+id/carcontainer"
+                app:layout_constraintTop_toTopOf="@+id/carcontainer">
+
+
+                <ImageView
+                    android:id="@+id/protein_egg"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="9dp"
+                    android:src="@drawable/egg"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.073"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/protein_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="단백질"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.015"
+                    app:layout_constraintStart_toStartOf="@+id/protein_egg"
+                    app:layout_constraintTop_toBottomOf="@+id/protein_egg" />
+
+
+                <TextView
+                    android:id="@+id/protein_intake_kcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="125g"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/protein_name"
+                    app:layout_constraintTop_toBottomOf="@+id/protein_name" />
+
+                <TextView
+                    android:id="@+id/protein_kcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:text="/200g"
+                    android:textColor="@color/unabletetxt"
+                    android:textSize="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/protein_intake_kcal"
+                    app:layout_constraintTop_toBottomOf="@+id/protein_name" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/fatcontainer"
+                android:layout_width="105dp"
+                android:layout_height="113dp"
+                android:background="@drawable/home_back3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.192"
+                app:layout_constraintStart_toEndOf="@+id/proteincontainer"
+                app:layout_constraintTop_toTopOf="@+id/proteincontainer">
+
+
+                <ImageView
+                    android:id="@+id/fat_cheese"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
+                    android:layout_marginLeft="9dp"
+                    android:layout_marginTop="9dp"
+                    android:src="@drawable/home_cheese"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+                ]
+
+                <TextView
+                    android:id="@+id/fat_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:text="지방"
+                    android:textSize="10dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/fat_cheese"
+                    app:layout_constraintTop_toBottomOf="@+id/fat_cheese" />
+
+
+                <TextView
+                    android:id="@+id/fat_intake_kacl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="125g"
+                    android:textColor="@color/black"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/fat_name"
+                    app:layout_constraintTop_toBottomOf="@+id/fat_name" />
+
+
+                <TextView
+                    android:id="@+id/fat_kcal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="/200g"
+                    android:textColor="@color/unabletetxt"
+                    android:textSize="10dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toEndOf="@+id/fat_intake_kacl"
+                    app:layout_constraintTop_toTopOf="@+id/fat_intake_kacl" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <ImageButton
+                android:id="@+id/Breakfast_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/addphoto"
+                app:layout_constraintEnd_toEndOf="@+id/carcontainer"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/carcontainer"
+                app:layout_constraintTop_toBottomOf="@+id/carcontainer" />
+
+            <TextView
+                android:id="@+id/breakfast_title"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/calendar_timebackgroud"
+                android:gravity="center"
+                android:text="아침"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                app:layout_constraintStart_toStartOf="@+id/Breakfast_image"
+                app:layout_constraintTop_toBottomOf="@+id/Breakfast_image" />
+
+            <TextView
+                android:id="@+id/breakfast_kcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0kcal"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@+id/Breakfast_image"
+                app:layout_constraintTop_toBottomOf="@+id/Breakfast_image" />
+
+            <ImageButton
+                android:id="@+id/lunch_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="32dp"
+                android:src="@drawable/addphoto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.506"
+                app:layout_constraintStart_toEndOf="@+id/Breakfast_image"
+                app:layout_constraintTop_toBottomOf="@+id/fatcontainer" />
+
+            <TextView
+                android:id="@+id/lunch_title"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/calendar_timebackgroud"
+                android:gravity="center"
+                android:text="점심"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                app:layout_constraintStart_toStartOf="@+id/lunch_image"
+                app:layout_constraintTop_toBottomOf="@+id/lunch_image" />
+
+
+            <TextView
+                android:id="@+id/lunch_kacl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="0dp"
+                android:text="0kcal"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@+id/lunch_image"
+                app:layout_constraintTop_toBottomOf="@+id/lunch_image" />
+
+
+            <ImageButton
+                android:id="@+id/dinner_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="52dp"
+                android:src="@drawable/addphoto"
+                app:layout_constraintEnd_toEndOf="@+id/breakfast_title"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/breakfast_title"
+                app:layout_constraintTop_toBottomOf="@+id/breakfast_title" />
+
+            <TextView
+                android:id="@+id/dinner_title"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/calendar_timebackgroud"
+                android:gravity="center"
+                android:text="저녁"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                app:layout_constraintStart_toStartOf="@+id/dinner_image"
+                app:layout_constraintTop_toBottomOf="@+id/dinner_image" />
+
+
+            <TextView
+                android:id="@+id/dinner_kcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0kcal"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@+id/dinner_image"
+                app:layout_constraintTop_toBottomOf="@+id/dinner_image" />
+
+
+            <ImageButton
+                android:id="@+id/snack_image"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_marginTop="52dp"
+                android:src="@drawable/addphoto"
+                app:layout_constraintEnd_toEndOf="@+id/lunch_title"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/lunch_title"
+                app:layout_constraintTop_toBottomOf="@+id/lunch_title" />
+
+            <TextView
+                android:id="@+id/snack_title"
+                android:layout_width="40dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/calendar_timebackgroud"
+                android:gravity="center"
+                android:text="간식"
+                android:textColor="@color/white"
+                android:textSize="10dp"
+                app:layout_constraintEnd_toEndOf="@+id/snack_image"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/snack_image"
+                app:layout_constraintTop_toBottomOf="@+id/snack_image" />
+
+            <TextView
+                android:id="@+id/snack_kcal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="0kcal"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@+id/snack_image"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toEndOf="@+id/snack_title"
+                app:layout_constraintTop_toBottomOf="@+id/snack_image" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+
+</LinearLayout>
