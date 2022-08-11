@@ -1,27 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".Login_Join.JoinStepTwoActivity">
+    android:layout_height="match_parent">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:fillViewport="true"
-        android:scrollbars="none">
+        android:orientation="vertical"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="0dp">
+
             <TextView
                 android:id="@+id/txt_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
-                android:text="회원가입"
+                android:text="정보변경"
                 android:textColor="@color/black"
                 android:textSize="20dp"
                 android:textStyle="bold"
@@ -33,7 +38,7 @@
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="16dp"
                 android:background="@color/randingpage"
                 android:elevation="1dp"
                 android:orientation="vertical"
@@ -46,46 +51,130 @@
                 android:id="@+id/txt_subtitle1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
-                android:text="지향하는 채식 타입을"
+                android:layout_marginTop="52dp"
+                android:text="프로필 이미지를 등록해주세요."
                 android:textColor="@color/black"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.103"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/resetprofile_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginStart="68dp"
+                android:src="@drawable/join_person"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_subtitle1"
+                app:layout_constraintStart_toEndOf="@+id/txt_subtitle1"
+                app:layout_constraintTop_toTopOf="@+id/txt_subtitle1"
+                app:layout_constraintVertical_bias="0.0" />
+
             <TextView
-                android:id="@+id/txt_subtitle2"
+                android:id="@+id/resetprofile_insert_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="선택해주세요."
-                android:textColor="@color/black"
-                android:textSize="20dp"
+                android:layout_marginTop="16dp"
+                android:text="이미지 올리기"
+                android:textColor="@color/primaycolor"
+                android:textSize="15dp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/txt_subtitle1"
-                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/txt_subtitle1"
                 app:layout_constraintTop_toBottomOf="@+id/txt_subtitle1" />
+
+            <TextView
+                android:id="@+id/txt_nickname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:text="닉네임"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/resetprofile_insert_image"
+                app:layout_constraintHorizontal_bias="0.311"
+                app:layout_constraintStart_toStartOf="@+id/resetprofile_insert_image"
+                app:layout_constraintTop_toBottomOf="@+id/resetprofile_insert_image" />
+
+            <EditText
+                android:id="@+id/resetprofile_nickname"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background_stroke"
+                android:hint=" 채식이"
+                android:paddingLeft="15dp"
+                android:textColorHint="@color/hintcolor"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="@+id/txt_nickname"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_nickname"
+                app:layout_constraintTop_toBottomOf="@+id/txt_nickname" />
+
+
+            <TextView
+                android:id="@+id/txt_pw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="100dp"
+                android:text="비밀번호"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/txt_nickname"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_nickname"
+                app:layout_constraintTop_toBottomOf="@+id/txt_nickname" />
+
+            <EditText
+                android:id="@+id/resetprofile_pw"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background_stroke"
+                android:hint=" 대/소문자,숫자,특수문자 중 2가지 이상 조합으로 8자 이상"
+                android:paddingLeft="15dp"
+                android:password="true"
+                android:textColorHint="@color/hintcolor"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@+id/txt_pw"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_pw"
+                app:layout_constraintTop_toBottomOf="@+id/txt_pw" />
+
+            <TextView
+                android:id="@+id/txt_vegantype"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="104dp"
+                android:text="채식타입"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/txt_pw"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_pw"
+                app:layout_constraintTop_toBottomOf="@+id/txt_pw" />
+
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/VeganType"
                 android:layout_width="360dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_subtitle2">
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="@+id/txt_vegantype"
+                app:layout_constraintHorizontal_bias="0.025"
+                app:layout_constraintStart_toStartOf="@+id/txt_vegantype"
+                app:layout_constraintTop_toBottomOf="@+id/txt_vegantype">
 
                 <ImageButton
                     android:id="@+id/vegan"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
                     android:background="@drawable/vagan_circle_button_background_stroke"
                     android:src="@drawable/carrot"
-                    android:layout_marginLeft="10dp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -126,9 +215,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="락토"
-                    android:textStyle="bold"
                     android:textColor="@color/join_four_text_color"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/textView"
                     app:layout_constraintEnd_toEndOf="@+id/lacto"
                     app:layout_constraintHorizontal_bias="0.461"
@@ -139,13 +228,13 @@
                     android:id="@+id/obo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
                     android:background="@drawable/obo_circle_button_background_stroke"
                     android:src="@drawable/fried_egg"
-                    android:layout_marginStart="24dp"
                     app:layout_constraintBottom_toBottomOf="@+id/lacto"
+                    app:layout_constraintHorizontal_bias="0.461"
                     app:layout_constraintStart_toEndOf="@id/lacto"
-                    app:layout_constraintTop_toTopOf="@+id/lacto"
-                    app:layout_constraintHorizontal_bias="0.461"/>
+                    app:layout_constraintTop_toTopOf="@+id/lacto" />
 
                 <TextView
                     android:id="@+id/textView2"
@@ -153,9 +242,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="오보"
-                    android:textStyle="bold"
                     android:textColor="@color/join_four_text_color"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/textView4"
                     app:layout_constraintEnd_toEndOf="@+id/obo"
                     app:layout_constraintHorizontal_bias="0.461"
@@ -166,22 +255,22 @@
                     android:id="@+id/lacto_obo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="24dp"
                     android:background="@drawable/lactoobo_circle_button_background_stroke"
                     android:src="@drawable/cheese_egg"
-                    android:layout_marginStart="24dp"
                     app:layout_constraintBottom_toBottomOf="@+id/obo"
+                    app:layout_constraintHorizontal_bias="0.461"
                     app:layout_constraintStart_toEndOf="@id/obo"
-                    app:layout_constraintTop_toTopOf="@+id/obo"
-                    app:layout_constraintHorizontal_bias="0.461"/>
+                    app:layout_constraintTop_toTopOf="@+id/obo" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:text="락토오보"
-                    android:textStyle="bold"
                     android:textColor="@color/join_four_text_color"
                     android:textSize="15dp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="@+id/textView2"
                     app:layout_constraintEnd_toEndOf="@+id/lacto_obo"
                     app:layout_constraintHorizontal_bias="0.461"
@@ -204,11 +293,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
+                    android:layout_marginBottom="10dp"
                     android:text="페스코"
-                    android:textStyle="bold"
                     android:textColor="@color/join_four_text_color"
                     android:textSize="15dp"
-                    android:layout_marginBottom="10dp"
+                    android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="@+id/textView"
                     app:layout_constraintHorizontal_bias="0.461"
@@ -222,88 +311,75 @@
                 android:id="@+id/txt_height"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="28dp"
+                android:layout_marginTop="255dp"
                 android:text="키"
                 android:textColor="@color/black"
-                android:textSize="18dp"
-                app:layout_constraintEnd_toEndOf="@+id/txt_subtitle2"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/txt_vegantype"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/txt_subtitle2"
-                app:layout_constraintTop_toBottomOf="@+id/VeganType" />
+                app:layout_constraintStart_toStartOf="@+id/txt_vegantype"
+                app:layout_constraintTop_toBottomOf="@+id/txt_vegantype" />
 
             <EditText
-                android:id="@+id/join_height"
+                android:id="@+id/resetprofile_height"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/button_background_stroke"
                 android:hint="165"
-                android:textColorHint="@color/hintcolor"
-                android:paddingLeft="15dp"
-                android:textSize="20dp"
                 android:inputType="number"
+                android:paddingLeft="15dp"
+                android:textColorHint="@color/hintcolor"
+                android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/txt_height"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.017"
                 app:layout_constraintStart_toStartOf="@+id/txt_height"
                 app:layout_constraintTop_toBottomOf="@+id/txt_height" />
 
             <TextView
-                android:id="@+id/cm"
+                android:id="@+id/txt_cm"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="cm"
                 android:textColor="@color/black"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/join_height"
-                app:layout_constraintEnd_toEndOf="@+id/join_height"
+                app:layout_constraintBottom_toBottomOf="@+id/resetprofile_height"
+                app:layout_constraintEnd_toEndOf="@+id/resetprofile_height"
                 app:layout_constraintHorizontal_bias="0.917"
-                app:layout_constraintStart_toStartOf="@+id/join_height"
-                app:layout_constraintTop_toTopOf="@+id/join_height"
+                app:layout_constraintStart_toStartOf="@+id/resetprofile_height"
+                app:layout_constraintTop_toTopOf="@+id/resetprofile_height"
                 app:layout_constraintVertical_bias="0.466" />
-
 
             <TextView
                 android:id="@+id/txt_weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="88dp"
+                android:layout_marginTop="90dp"
                 android:text="몸무게"
                 android:textColor="@color/black"
-                android:textSize="18dp"
+                android:textSize="15dp"
+                android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="@+id/txt_height"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintHorizontal_bias="0.222"
                 app:layout_constraintStart_toStartOf="@+id/txt_height"
                 app:layout_constraintTop_toBottomOf="@+id/txt_height" />
 
             <EditText
-                android:id="@+id/join_weight"
+                android:id="@+id/resetprofile_weight"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/button_background_stroke"
                 android:hint="51"
                 android:inputType="number"
-                android:textColorHint="@color/hintcolor"
                 android:paddingLeft="15dp"
+                android:textColorHint="@color/hintcolor"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/txt_weight"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/txt_weight"
                 app:layout_constraintTop_toBottomOf="@+id/txt_weight" />
-
-            <TextView
-                android:id="@+id/kg"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="kg"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/join_weight"
-                app:layout_constraintEnd_toEndOf="@+id/join_weight"
-                app:layout_constraintHorizontal_bias="0.917"
-                app:layout_constraintStart_toStartOf="@+id/join_weight"
-                app:layout_constraintTop_toTopOf="@+id/join_weight"
-                app:layout_constraintVertical_bias="0.466" />
 
             <TextView
                 android:id="@+id/txt_activation"
@@ -333,33 +409,33 @@
                     android:id="@+id/active_high"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="많음(주 5회)"
-                    android:gravity="center"
                     android:background="@drawable/join_active_background_stroke"
+                    android:gravity="center"
+                    android:text="많음(주 5회)"
                     android:textColor="@color/black"
-                    android:textSize="13dp"/>
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/active_middle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:text="보통(주 3회)"
-                    android:gravity="center"
                     android:background="@drawable/join_active_background_stroke"
+                    android:gravity="center"
+                    android:text="보통(주 3회)"
                     android:textColor="@color/black"
-                    android:textSize="13dp"/>
+                    android:textSize="13dp" />
 
                 <TextView
                     android:id="@+id/active_low"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="15dp"
-                    android:text="적음(주 1~2회)"
-                    android:gravity="center"
                     android:background="@drawable/join_active_background_stroke"
+                    android:gravity="center"
+                    android:text="적음(주 1~2회)"
                     android:textColor="@color/black"
-                    android:textSize="13dp"/>
+                    android:textSize="13dp" />
 
             </LinearLayout>
 
@@ -370,10 +446,10 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="50dp"
                 android:background="@color/primaycolor"
+                android:clickable="true"
                 android:text="다음"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:clickable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/active_group"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -383,4 +459,6 @@
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
