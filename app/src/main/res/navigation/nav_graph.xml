@@ -5,23 +5,24 @@
     android:id="@+id/nav_graph"
     app:startDestination="@id/homeFragment">
 
-    <activity
+
+    <fragment
         android:id="@+id/comunityFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.ComunityFragment"
         android:label="ComunityFragment" />
-    <activity
+    <fragment
         android:id="@+id/homeFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.HomeFragment"
         android:label="HomeFragment" />
-    <activity
+    <fragment
         android:id="@+id/myFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.MyFragment"
         android:label="MyFragment" />
-    <activity
+    <fragment
         android:id="@+id/recipeFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.RecipeFragment"
         android:label="RecipeFragment" />
-    <activity
+    <fragment
         android:id="@+id/calendarFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.CalendarFragment"
         android:label="fragment_calendar"

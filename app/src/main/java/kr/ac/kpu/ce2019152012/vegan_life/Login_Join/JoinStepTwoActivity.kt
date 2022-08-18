@@ -26,6 +26,7 @@ class JoinStepTwoActivity : AppCompatActivity() {
         val text =
             "JoinData{${myData?.profileImage}, ${myData?.nickname}, ${myData?.email}, ${myData?.password}}"
 
+
 /*        binding.VeganType.setOnClickListener {
             when (it.id) {
                 R.id.vegan -> {

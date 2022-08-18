@@ -16,9 +16,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Vegan_Life_noactionbar"
         tools:targetApi="31">
-        <activity
-            android:name=".CalendarFragment"
-            android:exported="false" />
+
         <activity
             android:name=".Login_Join.JoinCompleteActivity"
             android:exported="true" />
@@ -34,11 +32,6 @@
         <activity
             android:name=".SplashActivity.SplashActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <meta-data
@@ -47,7 +40,13 @@
 
         <activity
             android:name=".MainActivity"
-            android:exported="true" />
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

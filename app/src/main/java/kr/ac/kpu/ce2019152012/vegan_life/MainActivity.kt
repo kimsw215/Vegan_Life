@@ -3,14 +3,30 @@ package kr.ac.kpu.ce2019152012.vegan_life
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.kakao.sdk.common.util.Utility
+import androidx.navigation.fragment.NavHostFragment
+import androidx.navigation.ui.NavigationUI
+import kr.ac.kpu.ce2019152012.vegan_life.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding : ActivityMainBinding
+    /*        val keyHash = Utility.getKeyHash(this)//onCreate 안에 입력해주자
+        Log.d("Hash", keyHash)*/
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-/*        val keyHash = Utility.getKeyHash(this)//onCreate 안에 입력해주자
-        Log.d("Hash", keyHash)*/
+        onSetUpNavigation()
+    }
+
+    private fun onSetUpNavigation(){
+        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragmentContainer) as NavHostFragment
+
+        val navController = navHostFragment.navController
+
+        navController.addOnDestinationChangedListener{ _, destination, _ ->
+
+        }
+        NavigationUI.setupWithNavController(binding.bottomNav, navController)
     }
 }

@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1026287161604",
+    "project_id": "veganlife-16e17",
+    "storage_bucket": "veganlife-16e17.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1026287161604:android:b35c620bfd87f233ee8051",
+        "android_client_info": {
+          "package_name": "kr.ac.kpu.ce2019152012.vegan_life"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1026287161604-2ge2opb04r0t786odbif04c4ojck103c.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "kr.ac.kpu.ce2019152012.vegan_life",
+            "certificate_hash": "60c1eb23f0df7976a28c84f241cfcbefb3f50096"
+          }
+        },
+        {
+          "client_id": "1026287161604-llvku0v07146056i4r0ehrr3cno41rrs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD_HkDgVQLfSLIxmXI62cOovFT0h_I3HwQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1026287161604-llvku0v07146056i4r0ehrr3cno41rrs.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

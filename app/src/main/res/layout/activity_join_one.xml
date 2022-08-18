@@ -10,7 +10,6 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
@@ -107,16 +106,15 @@
                 android:id="@+id/join_insert_image"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:text="이미지 올리기"
                 android:textColor="@color/primaycolor"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/txt_insert"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/txt_insert"
-                app:layout_constraintTop_toBottomOf="@+id/txt_insert"
-                app:layout_constraintVertical_bias="0.034" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_insert" />
 
             <TextView
                 android:id="@+id/txt_nickname"
