@@ -223,7 +223,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="키"
+                android:text="키(cm)"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="@+id/txt_subtitle2"
@@ -237,37 +237,22 @@
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/button_background_stroke"
-                android:hint="165"
+                android:hint="163"
+                android:inputType="number"
                 android:textColorHint="@color/hintcolor"
                 android:paddingLeft="15dp"
                 android:textSize="20dp"
-                android:inputType="number"
                 app:layout_constraintEnd_toEndOf="@+id/txt_height"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/txt_height"
-                app:layout_constraintTop_toBottomOf="@+id/txt_height" />
-
-            <TextView
-                android:id="@+id/cm"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="cm"
-                android:textColor="@color/black"
-                android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/join_height"
-                app:layout_constraintEnd_toEndOf="@+id/join_height"
-                app:layout_constraintHorizontal_bias="0.917"
-                app:layout_constraintStart_toStartOf="@+id/join_height"
-                app:layout_constraintTop_toTopOf="@+id/join_height"
-                app:layout_constraintVertical_bias="0.466" />
-
+                app:layout_constraintTop_toBottomOf="@+id/txt_height"/>
 
             <TextView
                 android:id="@+id/txt_weight"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="88dp"
-                android:text="몸무게"
+                android:text="몸무게(kg)"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="@+id/txt_height"
@@ -292,20 +277,84 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_weight" />
 
             <TextView
-                android:id="@+id/kg"
+                android:id="@+id/txt_age"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="kg"
+                android:layout_marginTop="88dp"
+                android:text="나이(세)"
                 android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="@+id/txt_weight"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_weight"
+                app:layout_constraintTop_toBottomOf="@+id/txt_weight" />
+
+            <EditText
+                android:id="@+id/join_age"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/button_background_stroke"
+                android:hint="23"
+                android:inputType="number"
+                android:textColorHint="@color/hintcolor"
+                android:paddingLeft="15dp"
                 android:textSize="20dp"
-                app:layout_constraintBottom_toBottomOf="@+id/join_weight"
-                app:layout_constraintEnd_toEndOf="@+id/join_weight"
-                app:layout_constraintHorizontal_bias="0.917"
-                app:layout_constraintStart_toStartOf="@+id/join_weight"
-                app:layout_constraintTop_toTopOf="@+id/join_weight"
-                app:layout_constraintVertical_bias="0.466" />
+                app:layout_constraintEnd_toEndOf="@+id/txt_age"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_age"
+                app:layout_constraintTop_toBottomOf="@+id/txt_age" />
 
             <TextView
+                android:id="@+id/txt_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="88dp"
+                android:text="성별"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                app:layout_constraintEnd_toEndOf="@+id/txt_age"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_age"
+                app:layout_constraintTop_toBottomOf="@+id/txt_age" />
+
+            <LinearLayout
+                android:id="@id/active_group"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="44dp"
+                android:orientation="horizontal"
+                android:gravity="center"
+                app:layout_constraintEnd_toEndOf="@+id/txt_sex"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt_sex"
+                app:layout_constraintTop_toTopOf="@+id/txt_sex">
+
+                <TextView
+                    android:id="@+id/txt_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="여자"
+                    android:gravity="center"
+                    android:background="@drawable/join_sex_background_stroke"
+                    android:textColor="@color/black"
+                    android:layout_marginRight="20dp"
+                    android:textSize="16dp"/>
+
+                <TextView
+                    android:id="@+id/txt_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="남자"
+                    android:gravity="center"
+                    android:background="@drawable/join_sex_background_stroke"
+                    android:textColor="@color/black"
+                    android:textSize="16dp"/>
+
+            </LinearLayout>
+
+            <!--<TextView
                 android:id="@+id/txt_activation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -313,10 +362,10 @@
                 android:text="활동량"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-                app:layout_constraintEnd_toEndOf="@+id/txt_weight"
+                app:layout_constraintEnd_toEndOf="@+id/txt_sex"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/txt_weight"
-                app:layout_constraintTop_toBottomOf="@+id/txt_weight" />
+                app:layout_constraintStart_toStartOf="@+id/txt_sex"
+                app:layout_constraintTop_toBottomOf="@+id/txt_sex" />
 
             <LinearLayout
                 android:id="@id/active_group"
@@ -362,7 +411,7 @@
                     android:textSize="13dp"/>
 
             </LinearLayout>
-
+-->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/next_btn"
                 android:layout_width="350dp"

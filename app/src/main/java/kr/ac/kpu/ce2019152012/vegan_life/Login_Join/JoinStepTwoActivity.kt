@@ -23,7 +23,14 @@ class JoinStepTwoActivity : AppCompatActivity() {
     private lateinit var db : FirebaseFirestore
 
     var VeganType: Int = 0
-    var ActivityType: Int = 0
+    /*
+    vegan = 1 , lacto = 2 , obo = 3 , lactoObo = 4 , fesco = 5
+    */
+    var SexType: Int = 0
+    /*
+    female = 2 , male = 1
+    */
+    var basicCal: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -50,6 +57,7 @@ class JoinStepTwoActivity : AppCompatActivity() {
                 VeganType = 0
             }
         }
+
         binding.lacto.setOnClickListener {
             binding.lacto.isSelected = binding.lacto.isSelected != true
             binding.vegan.isSelected = false
@@ -103,48 +111,37 @@ class JoinStepTwoActivity : AppCompatActivity() {
             }
         }
 
-        binding.activeHigh.setOnClickListener {
-            binding.activeHigh.isSelected = binding.activeHigh.isSelected != true
-            binding.activeMiddle.isSelected = false
-            binding.activeLow.isSelected = false
+        binding.txtFemale.setOnClickListener {
+            binding.txtFemale.isSelected = binding.txtFemale.isSelected != true
+            binding.txtMale.isSelected = false
 
-            if(binding.activeHigh.isSelected){
-                ActivityType = 1
+            if(binding.txtFemale.isSelected){
+                SexType = 2
+                basicCal = 655.1 + (9.56 * binding.joinWeight.text.toString().toDouble())
+                + (1.85 * binding.joinHeight.text.toString().toDouble()) - (4.68 * binding.joinAge.text.toString().toDouble())
             } else {
-                ActivityType = 0
+                SexType = 0
             }
         }
-        binding.activeMiddle.setOnClickListener {
-            binding.activeMiddle.isSelected = binding.activeMiddle.isSelected != true
-            binding.activeHigh.isSelected = false
-            binding.activeLow.isSelected = false
+        binding.txtMale.setOnClickListener {
+            binding.txtMale.isSelected = binding.txtMale.isSelected != true
+            binding.txtFemale.isSelected = false
 
-            if(binding.activeMiddle.isSelected){
-                ActivityType = 2
+            if(binding.txtMale.isSelected){
+                SexType = 1
+                basicCal = 66.47 + (13.75 * binding.joinWeight.text.toString().toDouble()) + (5.0 * binding.joinHeight.text.toString().toDouble()) - (6.76 * binding.joinAge.text.toString().toDouble())
             } else {
-                ActivityType = 0
-            }
-        }
-
-        binding.activeLow.setOnClickListener {
-            binding.activeLow.isSelected = binding.activeLow.isSelected != true
-            binding.activeHigh.isSelected = false
-            binding.activeMiddle.isSelected = false
-
-            if(binding.activeLow.isSelected){
-                ActivityType = 3
-            } else {
-                ActivityType = 0
+                SexType = 0
             }
         }
 
         binding.nextBtn.setOnClickListener {
-            if (VeganType == 0 && ActivityType == 0) {
+            if (VeganType == 0 && SexType == 0) {
                 Toast.makeText(this, "필수정보가 미기입되어있습니다.", Toast.LENGTH_SHORT).show()
             } else {
                 Log.d(
                     "Tag", "OneActivity에서 넘어온 정보: " + text +
-                            "비건 타입: ${VeganType}, 활동량 타입: ${ActivityType}" +
+                            "비건 타입: ${VeganType}, 활동량 타입: ${SexType}" +
                             "키:${
                                 binding.joinHeight.text.toString().trim()
                             }, 몸무게: ${binding.joinWeight.text.toString().trim()}")
@@ -156,11 +153,13 @@ class JoinStepTwoActivity : AppCompatActivity() {
                     "image" to myData?.profileImage,
                     "hieght" to binding.joinHeight.text.toString().trim(),
                     "weight" to binding.joinWeight.text.toString().trim(),
+                    "age" to binding.joinAge.text.toString().trim(),
+                    "basiccal" to basicCal,
                     "vegantype" to VeganType,
-                    "activitytype" to ActivityType
+                    "sex" to SexType
                 )
 
-                db.collection("User").document(myData!!.email)
+                db.collection(myData!!.email).document("Info")
                     .set(UserInformation, SetOptions.merge())
                     .addOnCanceledListener { Log.d(TAG, "DocumentSnapshot successfully written!")}
                     .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e)  }

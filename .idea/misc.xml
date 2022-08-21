@@ -10,6 +10,7 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/edit_fail_background_stroke.xml" value="0.1825" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/fesco_circle_button_background_stroke.xml" value="0.179" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/join_active_background_stroke.xml" value="0.198" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/join_sex_background_stroke.xml" value="0.1805" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/join_vegan_background_stroke.xml" value="0.198" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/joinactive_check.xml" value="0.198" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/lacto_circle_button_background_stroke.xml" value="0.179" />
@@ -21,17 +22,20 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_calendar_foodadd.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_calendar_fooddetail.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_calendar_foodinput.xml" value="0.20820863616930313" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_community_input.xml" value="0.4" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_complete.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_five_body.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_four_select.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_one.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_one_name.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_three_pw.xml" value="0.264" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_two.xml" value="0.2" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_two.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_two_email.xml" value="0.2" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_login.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_my_changepassword.xml" value="0.21120136810602821" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_randing_page.xml" value="0.264" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_resetprofile.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_calendar.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_comunity.xml" value="0.20820863616930313" />
