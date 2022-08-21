@@ -48,8 +48,8 @@ class HomeFragment : Fragment() {
                 UserList.add(it["nickname"].toString().trim())
 
                 binding.homeNickname.text = it["nickname"].toString().trim() + " 님"
-
                 binding.homeRecipeName.text = it["nickname"].toString().trim() + " 님의 추천 식단"
+
                 Log.d("info",it["nickname"].toString().trim())
                 UserList.add(it["basiccal"].toString().trim())
 
