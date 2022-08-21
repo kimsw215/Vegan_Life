@@ -117,8 +117,9 @@ class JoinStepTwoActivity : AppCompatActivity() {
 
             if(binding.txtFemale.isSelected){
                 SexType = 2
-                basicCal = 655.1 + (9.56 * binding.joinWeight.text.toString().toDouble())
-                + (1.85 * binding.joinHeight.text.toString().toDouble()) - (4.68 * binding.joinAge.text.toString().toDouble())
+                basicCal = 655.1 + (9.56 * binding.joinWeight.text.toString().toDouble()) + (1.85 * binding.joinHeight.text.toString().toDouble()) - (4.68 * binding.joinAge.text.toString().toDouble())
+                Log.d("JoinInfo"," 키 " + binding.joinHeight.text.toString() +" 몸무게 " + binding.joinWeight.text.toString()
+                        + " 나이 " + binding.joinAge.text.toString() + "기초대사량" + basicCal.toString())
             } else {
                 SexType = 0
             }
@@ -130,6 +131,8 @@ class JoinStepTwoActivity : AppCompatActivity() {
             if(binding.txtMale.isSelected){
                 SexType = 1
                 basicCal = 66.47 + (13.75 * binding.joinWeight.text.toString().toDouble()) + (5.0 * binding.joinHeight.text.toString().toDouble()) - (6.76 * binding.joinAge.text.toString().toDouble())
+                Log.d("JoinInfo"," 키 " + binding.joinHeight.text.toString() +" 몸무게 " + binding.joinWeight.text.toString()
+                        + " 나이 " + binding.joinAge.text.toString() + "기초대사량" + basicCal.toString())
             } else {
                 SexType = 0
             }

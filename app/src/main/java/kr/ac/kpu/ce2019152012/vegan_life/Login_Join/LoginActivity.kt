@@ -20,8 +20,8 @@ import kr.ac.kpu.ce2019152012.vegan_life.R
 import kr.ac.kpu.ce2019152012.vegan_life.databinding.ActivityLoginBinding
 
 class LoginActivity : AppCompatActivity() {
-    private lateinit var binding : ActivityLoginBinding
-    private var auth : FirebaseAuth? = null
+    private lateinit var binding: ActivityLoginBinding
+    private var auth: FirebaseAuth? = null
     private lateinit var db: FirebaseFirestore
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -37,19 +37,26 @@ class LoginActivity : AppCompatActivity() {
 
         var UserList = arrayListOf<String>()
 
-        db.collection("User")
+        db.collection(auth?.currentUser?.email.toString().trim())
+            .document("Info")
             .get()
-            .addOnSuccessListener { result ->
-                for (docoment in result) {
-                    UserList.add(docoment.id.trim())
-                    Log.d("list", UserList.toString().trim())
-                }
+            .addOnSuccessListener {
+                UserList.add(it["email"].toString().trim())
+                UserList.add(it["passwd"].toString().trim())
+                UserList.add(it["age"].toString().trim())
+                UserList.add(it["height"].toString().trim())
+                UserList.add(it["weight"].toString().trim())
+                UserList.add(it["nickname"].toString().trim())
+                UserList.add(it["basiccal"].toString().trim())
+                Log.d("userlist", UserList.toString().trim())
             }.addOnFailureListener { exception ->
                 Log.d(TAG, "Error getting documents: ", exception)
             }
 
+
         // 이메일로 로그인
-        binding.loginBtn.setOnClickListener {
+        binding.loginBtn.setOnClickListener()
+        {
             auth?.signInWithEmailAndPassword(
                 binding.editId.text.toString().trim(),
                 binding.editPw.text.toString().trim()
@@ -64,8 +71,7 @@ class LoginActivity : AppCompatActivity() {
                             intent.putExtra("userId", binding.editId.text.toString())
                             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                             finish()
-                        }
-                        else {
+                        } else {
                             Log.w(TAG, "Error getting documents ")
                         }
                     } else {
@@ -75,13 +81,15 @@ class LoginActivity : AppCompatActivity() {
                 }
         }
 
-        binding.joinBtn.setOnClickListener {
-            val intent = Intent(this,JoinStepOneActivity::class.java)
+        binding.joinBtn.setOnClickListener()
+        {
+            val intent = Intent(this, JoinStepOneActivity::class.java)
             startActivity(intent)
         }
 
-        binding.editPw.addTextChangedListener {
-            if(it!!.length >= 1){
+        binding.editPw.addTextChangedListener()
+        {
+            if (it!!.length >= 1) {
                 binding.pwtextField.isHintEnabled = false
                 binding.loginBtn.isClickable = true
                 binding.loginBtn.isEnabled = true
@@ -93,9 +101,8 @@ class LoginActivity : AppCompatActivity() {
         }
 
 
-
-
     }
+
     public override fun onStart() {
         super.onStart()
         // Check if user is signed in (non-null) and update UI accroingly.
