@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/comunityFragment"
-        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.ComunityFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.CommunityFragment"
         android:label="ComunityFragment" />
     <fragment
         android:id="@+id/homeFragment"

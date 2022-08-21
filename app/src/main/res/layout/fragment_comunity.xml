@@ -145,6 +145,18 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/active_group" />
 
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="130dp">
+                
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/community_rvlist"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+                
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

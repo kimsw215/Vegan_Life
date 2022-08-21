@@ -45,7 +45,7 @@
 
             <SearchView
                 android:id="@+id/search_recipe"
-                android:layout_width="340dp"
+                android:layout_width="380dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="36dp"
                 android:background="@drawable/search_background"

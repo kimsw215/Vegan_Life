@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import kr.ac.kpu.ce2019152012.vegan_life.R
+import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentComunityBinding
 import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentHomeBinding
-import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentRecipeBinding
 
-class RecipeFragment : Fragment() {
-    private var _binding: FragmentRecipeBinding? = null
+class CommunityFragment : Fragment() {
+    private var _binding: FragmentComunityBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,7 +19,7 @@ class RecipeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentRecipeBinding.inflate(inflater,container,false)
+        _binding = FragmentComunityBinding.inflate(inflater,container,false)
         val view = binding.root
 
         return view
