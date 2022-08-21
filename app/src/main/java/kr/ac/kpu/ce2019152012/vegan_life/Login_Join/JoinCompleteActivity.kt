@@ -22,5 +22,6 @@ class JoinCompleteActivity : AppCompatActivity() {
         }
 
 
+
     }
 }
