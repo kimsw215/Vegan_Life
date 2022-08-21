@@ -12,6 +12,7 @@
         android:icon="@drawable/bottom_recipe"
         android:enabled="true"
         android:title="레시피"/>
+
     <item
         android:id="@+id/homeFragment"
         android:icon="@drawable/bottom_home"
