@@ -21,7 +21,7 @@
                 android:id="@+id/home_image"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginTop="88dp"
+                android:layout_marginTop="48dp"
                 android:src="@drawable/join_person"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.116"
@@ -319,97 +319,111 @@
                 android:orientation="horizontal" />
 
             <ImageView
-                android:id="@+id/home_recipeimage1"
+                android:id="@+id/home_img1"
                 android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintStart_toStartOf="@+id/linearLayout3"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+                android:layout_height="140dp"
+                android:layout_marginTop="36dp"
+                android:src="@drawable/asparagus_cream_pasta"
+                app:layout_constraintEnd_toEndOf="@+id/home_recipe_name"
+                app:layout_constraintHorizontal_bias="0.315"
+                app:layout_constraintStart_toStartOf="@+id/home_recipe_name"
+                app:layout_constraintTop_toBottomOf="@+id/home_recipe_name" />
 
             <TextView
-                android:id="@+id/home_recipename1"
+                android:id="@+id/home_txt1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="레시피 이름"
+                android:text="아스파라거스 크림 파스타"
                 android:textColor="@color/black"
                 android:textSize="13dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/home_recipeimage1"
-                app:layout_constraintTop_toBottomOf="@+id/home_recipeimage1" />
+                app:layout_constraintEnd_toEndOf="@+id/home_img1"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/home_img1"
+                app:layout_constraintTop_toBottomOf="@+id/home_img1" />
 
             <ImageView
-                android:id="@+id/home_recipeimage2"
+                android:id="@+id/home_img2"
                 android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="32dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.23"
-                app:layout_constraintStart_toEndOf="@+id/home_recipeimage1"
-                app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+                android:layout_height="140dp"
+                android:layout_marginStart="28dp"
+                android:src="@drawable/beet_risotto"
+                app:layout_constraintStart_toEndOf="@+id/home_img1"
+                app:layout_constraintTop_toTopOf="@+id/home_img1" />
 
             <TextView
-                android:id="@+id/home_recipename2"
-                android:layout_width="65dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="레시피 이름"
-                android:textColor="@color/black"
-                android:textSize="13dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/home_recipeimage2"
-                app:layout_constraintTop_toBottomOf="@+id/home_recipeimage2" />
-
-            <ImageView
-                android:id="@+id/home_recipeimage3"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="64dp"
-                app:layout_constraintStart_toStartOf="@+id/home_recipeimage1"
-                app:layout_constraintTop_toBottomOf="@+id/home_recipeimage1" />
-
-            <TextView
-                android:id="@+id/home_recipename3"
+                android:id="@+id/home_txt2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="레시피 이름"
+                android:text="비트 리조또"
                 android:textColor="@color/black"
                 android:textSize="13dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.006"
-                app:layout_constraintStart_toStartOf="@+id/home_recipeimage3"
-                app:layout_constraintTop_toBottomOf="@+id/home_recipeimage3" />
+                app:layout_constraintEnd_toEndOf="@+id/home_img2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/home_img2"
+                app:layout_constraintTop_toBottomOf="@+id/home_img2" />
 
             <ImageView
-                android:id="@+id/home_recipeimage4"
+                android:id="@+id/home_img3"
                 android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="64dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/home_recipeimage3"
-                app:layout_constraintTop_toBottomOf="@+id/home_recipeimage2" />
+                android:layout_height="140dp"
+                android:layout_marginTop="45dp"
+                android:src="@drawable/braised_kimchi_with_onion"
+                app:layout_constraintEnd_toEndOf="@+id/home_img1"
+                app:layout_constraintHorizontal_bias="0.315"
+                app:layout_constraintStart_toStartOf="@+id/home_img1"
+                app:layout_constraintTop_toBottomOf="@+id/home_img1" />
 
             <TextView
-                android:id="@+id/home_recipename4"
+                android:id="@+id/home_txt3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="레시피 이름"
+                android:text="통양파 김치찜"
                 android:textColor="@color/black"
                 android:textSize="13dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/home_recipeimage4"
-                app:layout_constraintTop_toBottomOf="@+id/home_recipeimage4" />
+                app:layout_constraintEnd_toEndOf="@+id/home_img3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/home_img3"
+                app:layout_constraintTop_toBottomOf="@+id/home_img3" />
+
+            <ImageView
+                android:id="@+id/home_img4"
+                android:layout_width="150dp"
+                android:layout_height="140dp"
+                android:layout_marginTop="36dp"
+                android:src="@drawable/braised_short_necked_red_pepper_paste"
+                app:layout_constraintEnd_toEndOf="@+id/home_img2"
+                app:layout_constraintHorizontal_bias="0.315"
+                app:layout_constraintStart_toStartOf="@+id/home_img2"
+                app:layout_constraintTop_toBottomOf="@+id/home_img2" />
+
+            <TextView
+                android:id="@+id/home_txt4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="꽈리고추조림"
+                android:textColor="@color/black"
+                android:textSize="13dp"
+                app:layout_constraintEnd_toEndOf="@+id/home_img4"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="@+id/home_img4"
+                app:layout_constraintTop_toBottomOf="@+id/home_img4" />
+
+            <!--            <androidx.recyclerview.widget.RecyclerView
+                            android:id="@+id/rv_list"
+                            android:layout_width="330dp"
+                            android:layout_height="185dp"
+                            android:layout_marginStart="4dp"
+                            android:layout_marginTop="32dp"
+                            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                            tools:listitem="@layout/home_listview"
+                            app:layout_constraintStart_toStartOf="@+id/linearLayout3"
+                            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />-->
+
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>

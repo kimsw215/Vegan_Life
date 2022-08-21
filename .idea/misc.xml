@@ -35,12 +35,16 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_my_changepassword.xml" value="0.21120136810602821" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_randing_page.xml" value="0.264" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_resetprofile.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_calendar.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_comunity.xml" value="0.20820863616930313" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_home.xml" value="0.2" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_detail.xml" value="0.20735356990166737" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_home.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_my.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_recipe.xml" value="0.20820863616930313" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/home_listview.xml" value="0.264" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/recipe_listview.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20820863616930313" />
       </map>
     </option>
