@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="추천 레시피"
+                android:textColor="@color/black"
+                android:textSize="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/foodImg"
+                android:layout_width="match_parent"
+                android:layout_height="300dp"
+                android:layout_marginTop="32dp"
+                android:background="@drawable/beet_risotto"
+                app:layout_constraintEnd_toEndOf="@+id/title"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="@+id/title"
+                app:layout_constraintTop_toBottomOf="@+id/title" />
+
+            <TextView
+                android:id="@+id/foodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="비트 리조또"
+                android:textColor="@color/black"
+                android:textSize="18dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/foodImg"
+                app:layout_constraintHorizontal_bias="0.119"
+                app:layout_constraintStart_toStartOf="@+id/foodImg"
+                app:layout_constraintTop_toBottomOf="@+id/foodImg" />
+
+            <LinearLayout
+                android:id="@+id/line1"
+                android:layout_width="340dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="68dp"
+                android:background="@color/unabletetxt"
+                android:orientation="vertical"
+                app:layout_constraintEnd_toEndOf="@+id/foodImg"
+                app:layout_constraintHorizontal_bias="0.38"
+                app:layout_constraintStart_toStartOf="@+id/foodImg"
+                app:layout_constraintTop_toBottomOf="@+id/foodImg"
+                app:layout_constraintVertical_bias="0.0" />
+
+            <TextView
+                android:id="@+id/txt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="재료(1인분 기준)"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/foodName"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="@+id/foodName"
+                app:layout_constraintTop_toBottomOf="@+id/line1" />
+
+            <TextView
+                android:id="@+id/txt11"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="비트 중 사이즈 1개 (100g)\n
+보리 100g\n
+식초 2T\n
+소금 0.5t\n
+캐슈넛 30g\n
+다시마 2조각\n
+올리브오일 1T (선택)
+"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/txt1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt1"
+                app:layout_constraintTop_toBottomOf="@+id/txt1" />
+
+            <TextView
+                android:id="@+id/txt2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="48dp"
+                android:text="레시피"
+                android:textColor="@color/black"
+                android:textSize="17dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/txt1"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt1"
+                app:layout_constraintTop_toBottomOf="@+id/txt11" />
+
+            <TextView
+                android:id="@+id/txt22"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="28dp"
+                android:text="1. 비트는 깨끗이 씼어서 껍질 채로 40분 이상 푹 삶는다. \n
+오래 삶아야 부드럽고 잘 갈리고 은은한 단맛이 난다. \n덜 익은 비트는 딱딱하고 약간 흙 맛이 난다.\n
+2 1시간 이상 충분히 불린 보리는 다시마 2조각을 넣고 \n끓인다. \n
+물은 보리와 동일한 양을 넣는다. 강불에서 3분 \n- 불 줄여서 2분 - 3분 뜸들이기. \n
+3 불린 캐슈넛은 블렌더에 넣고 갈아준다.\n 잘 갈리지 않을 땐 두유나 물을 한스푼씩 넣어 갈아본다. \n한꺼번에
+ 많이 넣지 않고 조금씩 증량하며 갈아주기.\n 크림같은 질감이 되면 완성\n
+4 푹 익은 비트는 옥수수같은 냄새가 난다. 껍질을 벗기면\n 홍시처럼 잘 벗겨진다! 껍질 벗기고 적당한 크기로 썰어 \n블렌더에 갈아준다.
+이 때 식초 2스푼을 함께 넣어준다.\n 식초가 비트의 맛을 확 끌어올린다.
+잘 안갈리면 물을 조금씩 \n넣어(스푼으로)보며 갈아준다. 물 한꺼번에 많이 넣지 않기\n
+5 팬에 보리 넣고, 다시마 물을 조금씩 넣어 볶아주다가 \n소금 반 티스푼을 넣는다.\n
+간을 보고 적절하게 소금양을 조절한다.
+"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/txt2"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/txt2"
+                app:layout_constraintTop_toBottomOf="@+id/txt2" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
