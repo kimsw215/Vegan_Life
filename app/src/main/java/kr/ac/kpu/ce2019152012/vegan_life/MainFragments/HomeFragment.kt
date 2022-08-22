@@ -11,8 +11,10 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.ListAdapter
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
@@ -49,16 +51,16 @@ class HomeFragment : Fragment() {
     private var br: BroadcastReceiver? = null
     private var am: AlarmManager? = null
 
-    // 24시 자정 제크 함수
+/*    // 24시 자정 제크 함수
     private var receiver: BroadcastReceiver? = object : BroadcastReceiver() {
         override fun onReceive(context: Context?, intent: Intent?) {
-            /*Bundle bundle = intent.getExtras();
+            *//*Bundle bundle = intent.getExtras();
             if (bundle != null) {
                 String string = bundle.getString("");
                 int resultCode = bundle.getInt("");
-            }*/
+            }*//*
         }
-    }
+    }*/
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -80,7 +82,7 @@ class HomeFragment : Fragment() {
         // db 셋업
         setup()
         // 24시간 자정 기준 이벤트 변화
-        broad_setup()
+//        broad_setup()
 
         var UserList = arrayListOf<String>()
 
@@ -100,6 +102,24 @@ class HomeFragment : Fragment() {
             }.addOnFailureListener { exception ->
                 Log.d("error", "Error getting documents: ", exception)
             }
+
+        /*binding.homeImg1.setOnClickListener {
+            var action = HomeFragmentDirections.actionHomeFragmentToHomeDetail1()
+            it.findNavController().navigate(action)
+        }*/
+
+        view.findViewById<ImageView>(R.id.home_img1).setOnClickListener {
+            view.findNavController().navigate(R.id.action_homeFragment_to_home_detail1)
+        }
+        view.findViewById<ImageView>(R.id.home_img2).setOnClickListener {
+            view.findNavController().navigate(R.id.action_homeFragment_to_home_detail2)
+        }
+        view.findViewById<ImageView>(R.id.home_img3).setOnClickListener {
+            view.findNavController().navigate(R.id.action_homeFragment_to_home_detail3)
+        }
+        view.findViewById<ImageView>(R.id.home_img4).setOnClickListener {
+            view.findNavController().navigate(R.id.action_homeFragment_to_home_detail4)
+        }
 
         return view
     }
@@ -130,7 +150,7 @@ class HomeFragment : Fragment() {
         db.firestoreSettings = settings
     }
 
-    fun broad_setup(){
+    /*fun broad_setup(){
         br = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
 
@@ -161,7 +181,7 @@ class HomeFragment : Fragment() {
                         "꽈리고추 100g\n감자 작은거 2개\n가지 1/2개\n마늘 4개\n간장 1.5T\n설탕 1T\n물 3T\n들기름 1T\n참깨\n",
                         "1 꽈리고추는 손가락 마디 길이로 잘라준다. 끝부분이 매운지 살짝 냄새만 맡았는데도 매운향이 난다.\n2 감자, 가지도 비슷한 길이로 썰어준다. 마늘은 적당히 가로로 두툼하게 썰기\n3 양념장을 미리 준비한다.- 진간장 1.5스푼, 설탕 1스푼, 물 3스푼 넣어 준비한다. 들기름은 마지막에 둘러줄 것이니 제외!\n4 단단한 순서로 익힌다. 먼저 감자익히기. 기름 대신에 물 부어서 볶는다\n5 감자가 약간 불투명하게 색이 바뀌면 가지, 마늘, 양념장을 넣고 볶는다.\n6 꽈리고추 매우니까 푹 익혀야 할 것 같은 느낌이라 조금 더 물로 볶아주다가(사실 익혀도 매운건 마찬가지..) 마지막에 들기름 1스푼, 참깨 뿌려주었다.\n"))
 
-             /*       add(RecipeDataVo("우엉잡채",R.drawable.burdock_japchae,
+             *//*       add(RecipeDataVo("우엉잡채",R.drawable.burdock_japchae,
                         "우엉 150g\n초록 피망 100g\n파프리카 빨간색 100g\n양파 1/4\n간장 2스푼\n조청 1스푼\n참기름 1스푼\n",
                         "1 우엉의 특유의 향과 맛은 껍질에 있기 때문에 되도록 껍질을 벗기지 않도록 깨끗하게 씻는다. 손바닥 길이 정도로 얇게 채로 썰어준다. \n썰고 나서는 바로 식초가 들어간 물에 담궈준다. 갈변을 막기 위해..라고 함\n2 물에 소금과 식초를 넣어 팔팔 끓으면 1분동안 우엉을 데쳐낸다. 건져서 찬물에 담궈둔다. \n이렇게 하면 우엉에 탄력도 생기고 조리 시간도 단축된다.\n3 청피망, 빨간 파프리카와 양파를 얇게 채썰어준다.\n4 양념장 만들기. 진간장2스푼, 조청1스푼, 물 6스푼 넣고 잘 섞어준다. \n단맛을 좋아한다면 설탕을 조금 더 추가한다.\n5 팬에 우엉과 양념장을 넣고 센불에 조리한다. \n수분이 줄어들고 거품이 커지고 타기 전까지 볶는다. 대략 4분 정도면 됨\n"))
 
@@ -205,7 +225,7 @@ class HomeFragment : Fragment() {
                     add(RecipeDataVo("vegun_dired_sweet_potato_stratch_sheet",R.drawable.vegun_dired_sweet_potato_stratch_sheet,"",""))
 
                     add(RecipeDataVo("wholemeal_banna_bread",R.drawable.wholemeal_banna_bread,"",""))
-*/
+*//*
 
                     Adapter.dataList = datas
                     Adapter.notifyDataSetChanged()
@@ -232,7 +252,7 @@ class HomeFragment : Fragment() {
                 return tempData
             }
         }
-    }
+    }*/
 
     companion object {
         private const val TAG = "EmailPassword"

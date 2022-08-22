@@ -13,7 +13,20 @@
     <fragment
         android:id="@+id/homeFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_home_detail1"
+            app:destination="@id/home_detail1" />
+        <action
+            android:id="@+id/action_homeFragment_to_home_detail2"
+            app:destination="@id/home_detail2" />
+        <action
+            android:id="@+id/action_homeFragment_to_home_detail3"
+            app:destination="@id/home_detail3" />
+        <action
+            android:id="@+id/action_homeFragment_to_home_detail4"
+            app:destination="@id/home_detail4" />
+    </fragment>
     <fragment
         android:id="@+id/myFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.MyFragment"
@@ -27,4 +40,24 @@
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.CalendarFragment"
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar" />
+    <fragment
+        android:id="@+id/home_detail1"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.Semitest.home_detail1"
+        android:label="fragment_detail1"
+        tools:layout="@layout/fragment_detail1" />
+    <fragment
+        android:id="@+id/home_detail2"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.Semitest.home_detail2"
+        android:label="fragment_detail2"
+        tools:layout="@layout/fragment_detail2" />
+    <fragment
+        android:id="@+id/home_detail3"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.Semitest.home_detail3"
+        android:label="fragment_detail3"
+        tools:layout="@layout/fragment_detail3" />
+    <fragment
+        android:id="@+id/home_detail4"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.Semitest.home_detail4"
+        android:label="fragment_detail4"
+        tools:layout="@layout/fragment_detail4" />
 </navigation>
