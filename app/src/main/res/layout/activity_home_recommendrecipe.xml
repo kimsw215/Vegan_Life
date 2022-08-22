@@ -126,7 +126,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/ingredient"
                 app:layout_constraintTop_toBottomOf="@+id/ingredient"
-                tools:listitem="@layout/recipe_listview" />
+                tools:listitem="@layout/home_listview" />
 
             <TextView
                 android:id="@+id/how"
@@ -153,7 +153,7 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/how"
                 app:layout_constraintTop_toBottomOf="@+id/how"
-                tools:listitem="@layout/recipe_listview" />
+                tools:listitem="@layout/home_listview" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
