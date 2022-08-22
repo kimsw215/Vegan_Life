@@ -10,7 +10,6 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/edit_fail_background_stroke.xml" value="0.1825" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/fesco_circle_button_background_stroke.xml" value="0.179" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/join_active_background_stroke.xml" value="0.198" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/join_sex_background_stroke.xml" value="0.1805" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/join_vegan_background_stroke.xml" value="0.198" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/joinactive_check.xml" value="0.198" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/lacto_circle_button_background_stroke.xml" value="0.179" />
@@ -19,10 +18,6 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/login_button_background_stroke.xml" value="0.182" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/obo_circle_button_background_stroke.xml" value="0.179" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/vagan_circle_button_background_stroke.xml" value="0.103" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_calendar_foodadd.xml" value="0.20820863616930313" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_calendar_fooddetail.xml" value="0.20820863616930313" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_calendar_foodinput.xml" value="0.20820863616930313" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_community_input.xml" value="0.4" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_complete.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_five_body.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_four_select.xml" value="0.264" />
@@ -32,20 +27,63 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_two.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_two_email.xml" value="0.2" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_login.xml" value="0.264" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_main.xml" value="0.2" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_my_changepassword.xml" value="0.21120136810602821" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_randing_page.xml" value="0.264" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_calendar.xml" value="0.20820863616930313" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_comunity.xml" value="0.20820863616930313" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_home.xml" value="0.2" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_my.xml" value="0.20820863616930313" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_recipe.xml" value="0.20820863616930313" />
-        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20820863616930313" />
+        <entry key="..\:/Users/tkdzm/AndroidStudioProjects/VL/app/src/main/res/layout/activity_calendar_fooddetail.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/tkdzm/AndroidStudioProjects/VL/app/src/main/res/layout/activity_calendar_foodinput.xml" value="0.3333333333333333" />
+        <entry key="..\:/Users/tkdzm/AndroidStudioProjects/VL/app/src/main/res/layout/activity_home_recommendrecipe.xml" value="0.35520833333333335" />
+        <entry key="..\:/Users/tkdzm/AndroidStudioProjects/VL/app/src/main/res/layout/activity_join_two.xml" value="0.35520833333333335" />
+        <entry key="..\:/Users/tkdzm/AndroidStudioProjects/VL/app/src/main/res/layout/activity_resetprofile.xml" value="0.35520833333333335" />
+        <entry key="..\:/Users/tkdzm/AndroidStudioProjects/VL/app/src/main/res/layout/community_item_recycler.xml" value="0.31197916666666664" />
+        <entry key="..\:/Users/tkdzm/AndroidStudioProjects/VL/app/src/main/res/layout/fragment_comunity.xml" value="0.31197916666666664" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable-v24/join_active_background_stroke.xml" value="0.1395" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable/calendar_timebackgroud.xml" value="0.1615" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable/comunity_subname_background.xml" value="0.1615" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable/food_input_addfoodbackground.xml" value="0.136" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable/foodinput_active_background_stroke.xml" value="0.1" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable/home_back1.xml" value="0.1" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable/home_back2.xml" value="0.1255" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable/home_back3.xml" value="0.1255" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable/like_background.xml" value="0.1615" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable/progressbar_progressbar1.xml" value="0.1" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/drawable/search_background.xml" value="0.136" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_addfood.xml" value="0.178125" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_calendar_foodadd.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_calendar_fooddetail.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_calendar_foodinput.xml" value="0.16666666666666666" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_calendar_fragment.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_checkfeed.xml" value="0.22" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_community_input.xml" value="0.178125" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_food_input.xml" value="0.22" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_home_recommendrecipe.xml" value="0.22" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_join_complete.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_join_one.xml" value="0.22" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_join_two.xml" value="0.22" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_login.xml" value="0.16666666666666666" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_my_changepassword.xml" value="0.22" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_recommendrecipe.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_resetprofile.xml" value="0.22" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_splash.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/calendar_fragment.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/community_item_recycler.xml" value="0.3333333333333333" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/food_detail.xml" value="0.22" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_My.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_calendar.xml" value="0.24449182658137883" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_comunity.xml" value="0.16666666666666666" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_home.xml" value="0.16666666666666666" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_my.xml" value="0.16666666666666666" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_recipe.xml" value="0.22" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/home_fragment.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/recipe_listview.xml" value="0.3333333333333333" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/recommendrecipe.xml" value="0.16666666666666666" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/test.xml" value="0.16666666666666666" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/menu/bottom_nav_menu.xml" value="0.178125" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
