@@ -42,14 +42,22 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_my.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_recipe.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/menu/bottom_nav_menu.xml" value="0.20820863616930313" />
+        <entry key="..\:/Users/User/StudioProjects/anotherone/app/src/main/res/layout/community_item_recycler.xml" value="0.264" />
         <entry key="..\:/Users/tkdzm/AndroidStudioProjects/VL/app/src/main/res/layout/fragment_detail4.xml" value="0.35520833333333335" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.16576086956521738" />
+      </ProjectState>
+    </option>
   </component>
 </project>
