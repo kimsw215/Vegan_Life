@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="500dp"
-     android:orientation="horizontal">
+    android:orientation="horizontal">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/community_rvlist_image"
@@ -13,8 +13,8 @@
         android:src="@drawable/join_person" />
 
     <LinearLayout
-        android:layout_width="215dp"
-        android:layout_height="77dp"
+        android:layout_width="220dp"
+        android:layout_height="470dp"
         android:layout_marginTop="30dp"
         android:layout_marginRight="8dp"
         android:orientation="horizontal">
@@ -40,11 +40,20 @@
                 android:textSize="18dp" />
 
             <com.google.android.material.chip.Chip
-                android:id="@+id/chip7"
-                android:layout_width="wrap_content"
-                android:text="오보"
+                android:id="@+id/chip8"
+                android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="1" />
+                android:minHeight="48dp"
+                android:text="오보" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="커뮤니티 글"
+                android:textColor="@color/black"
+                android:textSize="18dp" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"></ImageView>
 
 
         </LinearLayout>
