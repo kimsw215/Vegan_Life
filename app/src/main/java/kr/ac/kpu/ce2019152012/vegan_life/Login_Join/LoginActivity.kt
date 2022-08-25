@@ -37,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
 
         var UserList = arrayListOf<String>()
 
-        db.collection(auth?.currentUser?.email.toString().trim())
+/*        db.collection(auth?.currentUser?.email.toString().trim())
             .document("Info")
             .get()
             .addOnSuccessListener {
@@ -51,8 +51,7 @@ class LoginActivity : AppCompatActivity() {
                 Log.d("userlist", UserList.toString().trim())
             }.addOnFailureListener { exception ->
                 Log.d(TAG, "Error getting documents: ", exception)
-            }
-
+            }*/
 
         // 이메일로 로그인
         binding.loginBtn.setOnClickListener()
@@ -66,14 +65,18 @@ class LoginActivity : AppCompatActivity() {
                         Toast.makeText(this, "로그인에 성공하였습니다.", Toast.LENGTH_SHORT).show()
                         val user = auth?.currentUser
                         updateUI(user)
-                        if (binding.editId.text.toString().trim() in UserList) {
+                        val intent = Intent(this, MainActivity::class.java)
+                        intent.putExtra("userId", binding.editId.text.toString())
+                        startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
+                        finish()
+     /*                   if (binding.editId.text.toString().trim() in UserList) {
                             val intent = Intent(this, MainActivity::class.java)
                             intent.putExtra("userId", binding.editId.text.toString())
                             startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                             finish()
                         } else {
                             Log.w(TAG, "Error getting documents ")
-                        }
+                        }*/
                     } else {
                         Toast.makeText(this, "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show()
                         updateUI(null)

@@ -150,7 +150,7 @@ class HomeFragment : Fragment() {
         db.firestoreSettings = settings
     }
 
-    fun broad_setup() {
+    /*fun broad_setup() {
         br = object : BroadcastReceiver() {
             override fun onReceive(context: Context, intent: Intent) {
 
@@ -492,9 +492,6 @@ class HomeFragment : Fragment() {
                             "1 두유유청 휘저어서 거품 만들어 주기\n2 코코넛 슈가 30g + 오일 25ml 넣어 잘 섞어준다. 코코넛 슈가는 더 많이 넣어줘도 될 듯 하다. 40~60g 정도까지..너무 달지않고 담백했음 ㅎㅎ 두유 유청에 넣어 잘 섞어준다.\n3 바나나는 껍질을 벗기고 잘 으깨준다. 원하는 크기로 으깬 후 액체류에 잘 섞어준다.\n4 통밀가루 240g 체에 쳐서 넣고, 베이킹 소다 1스푼, 시나몬 가루 1스푼, 가루류를 넣고 잘 섞는다. 이때 반드시 많이 섞지 말것!! 많이 섞으면 떡같은 질감이 된다.\n2분 동안 섞었는데도 떡이 되어버렸으니 1분 이내로 날가루만 안보일정도로 대충 섞어주길 추천\n5 팬에 넣고 원하는 토핑을 올린다. 바나나 슬라이스를 올려도 되고, 나는 오트밀과 시나문가루, 코코넛 슈가를 뿌려주었다.\n6 180도에서 50분 동안 익혀준다. \n"
                         )
                     )
-
-
-
                     Adapter.dataList = datas
                     Adapter.notifyDataSetChanged()
                 }
@@ -520,7 +517,7 @@ class HomeFragment : Fragment() {
                 return tempData
             }
         }
-    }
+    }*/
 
     companion object {
         private const val TAG = "EmailPassword"
