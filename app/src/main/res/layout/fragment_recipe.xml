@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainFragments.RecipeFragment">
 
     <ScrollView
@@ -14,7 +16,7 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp">
+            android:layout_height="match_parent">
 
             <TextView
                 android:id="@+id/txt_title"
@@ -43,7 +45,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 
-            <SearchView
+            <androidx.appcompat.widget.SearchView
                 android:id="@+id/search_recipe"
                 android:layout_width="380dp"
                 android:layout_height="40dp"
@@ -58,10 +60,10 @@
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
+                android:layout_marginTop="20dp"
                 android:scrollbars="none"
                 app:layout_constraintEnd_toEndOf="@+id/search_recipe"
-                app:layout_constraintHorizontal_bias="0.492"
+                app:layout_constraintHorizontal_bias="0.483"
                 app:layout_constraintStart_toStartOf="@+id/search_recipe"
                 app:layout_constraintTop_toBottomOf="@+id/search_recipe">
 
@@ -172,95 +174,23 @@
 
             </HorizontalScrollView>
 
-            <ImageView
-                android:id="@+id/recipeimage1"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginStart="32dp"
-                android:layout_marginTop="48dp"
-                app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"
-                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
-
-            <TextView
-                android:id="@+id/recipename1"
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rev_Recipe"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="표고탕수"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/recipeimage1"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/recipeimage1"
-                app:layout_constraintTop_toBottomOf="@+id/recipeimage1" />
-
-            <ImageView
-                android:id="@+id/recipeimage2"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="48dp"
+                android:layout_height="635dp"
+                android:layout_marginTop="30dp"
+                app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+                app:spanCount="2"
+                android:clipToPadding="false"
                 app:layout_constraintEnd_toEndOf="@+id/horizontalScrollView"
-                app:layout_constraintHorizontal_bias="0.544"
-                app:layout_constraintStart_toEndOf="@+id/recipeimage1"
-                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView" />
+                app:layout_constraintHorizontal_bias="0.493"
+                app:layout_constraintStart_toStartOf="@+id/horizontalScrollView"
+                app:layout_constraintTop_toBottomOf="@+id/horizontalScrollView"
+                tools:listitem="@layout/home_listview" />
 
-            <TextView
-                android:id="@+id/recipename2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="표고탕수"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/recipeimage2"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/recipeimage2"
-                app:layout_constraintTop_toBottomOf="@+id/recipeimage2" />
-
-            <ImageView
-                android:id="@+id/recipeimage3"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="@+id/recipename1"
-                app:layout_constraintTop_toBottomOf="@+id/recipename1" />
-
-            <TextView
-                android:id="@+id/recipename3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="표고탕수"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/recipeimage3"
-                app:layout_constraintTop_toBottomOf="@+id/recipeimage3" />
-
-            <ImageView
-                android:id="@+id/recipeimage4"
-                android:layout_width="150dp"
-                android:layout_height="150dp"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="@+id/recipename2"
-                app:layout_constraintTop_toBottomOf="@+id/recipename2" />
-
-            <TextView
-                android:id="@+id/recipename4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:text="표고탕수"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/recipeimage4"
-                app:layout_constraintTop_toBottomOf="@+id/recipeimage4" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

@@ -333,7 +333,7 @@
                 android:textColorHint="@color/hintcolor"
                 android:textSize="20dp"
                 app:layout_constraintEnd_toEndOf="@+id/txt_height"
-                app:layout_constraintHorizontal_bias="0.017"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/txt_height"
                 app:layout_constraintTop_toBottomOf="@+id/txt_height" />
 
@@ -346,7 +346,7 @@
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 app:layout_constraintEnd_toEndOf="@+id/txt_height"
-                app:layout_constraintHorizontal_bias="0.222"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/txt_height"
                 app:layout_constraintTop_toBottomOf="@+id/txt_height" />
 
@@ -395,113 +395,7 @@
                 app:layout_constraintStart_toStartOf="@+id/txt_age"
                 app:layout_constraintTop_toBottomOf="@+id/txt_age" />
 
-            <TextView
-                android:id="@+id/txt_sex"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="88dp"
-                android:text="성별"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                app:layout_constraintEnd_toEndOf="@+id/txt_age"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/txt_age"
-                app:layout_constraintTop_toBottomOf="@+id/txt_age" />
 
-            <LinearLayout
-                android:id="@id/active_group"
-                android:layout_width="350dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
-                android:orientation="horizontal"
-                android:gravity="center"
-                app:layout_constraintEnd_toEndOf="@+id/txt_sex"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/txt_sex"
-                app:layout_constraintTop_toTopOf="@+id/txt_sex">
-
-                <TextView
-                    android:id="@+id/txt_female"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="여자"
-                    android:gravity="center"
-                    android:background="@drawable/join_sex_background_stroke"
-                    android:textColor="@color/black"
-                    android:layout_marginRight="20dp"
-                    android:textSize="16dp"/>
-
-                <TextView
-                    android:id="@+id/txt_male"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:text="남자"
-                    android:gravity="center"
-                    android:background="@drawable/join_sex_background_stroke"
-                    android:textColor="@color/black"
-                    android:textSize="16dp"/>
-
-            </LinearLayout>
-
-            <!--<TextView
-                android:id="@+id/txt_activation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="88dp"
-                android:text="활동량"
-                android:textColor="@color/black"
-                android:textSize="18dp"
-                app:layout_constraintEnd_toEndOf="@+id/txt_sex"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/txt_sex"
-                app:layout_constraintTop_toBottomOf="@+id/txt_sex" />
-
-            <LinearLayout
-                android:id="@id/active_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="44dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/txt_activation"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/txt_activation"
-                app:layout_constraintTop_toTopOf="@+id/txt_activation">
-
-                <TextView
-                    android:id="@+id/active_high"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="많음(주 5회)"
-                    android:gravity="center"
-                    android:background="@drawable/join_active_background_stroke"
-                    android:textColor="@color/black"
-                    android:textSize="13dp"/>
-
-                <TextView
-                    android:id="@+id/active_middle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:text="보통(주 3회)"
-                    android:gravity="center"
-                    android:background="@drawable/join_active_background_stroke"
-                    android:textColor="@color/black"
-                    android:textSize="13dp"/>
-
-                <TextView
-                    android:id="@+id/active_low"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:text="적음(주 1~2회)"
-                    android:gravity="center"
-                    android:background="@drawable/join_active_background_stroke"
-                    android:textColor="@color/black"
-                    android:textSize="13dp"/>
-
-            </LinearLayout>
--->
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/next_btn"
                 android:layout_width="350dp"
@@ -509,16 +403,16 @@
                 android:layout_marginTop="50dp"
                 android:layout_marginBottom="50dp"
                 android:background="@color/primaycolor"
+                android:clickable="true"
                 android:text="변경"
                 android:textColor="@color/white"
                 android:textSize="20dp"
-                android:clickable="true"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/active_group"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/active_group"
-                app:layout_constraintTop_toBottomOf="@+id/active_group"
-                app:layout_constraintVertical_bias="1.0" />
+                app:layout_constraintEnd_toEndOf="@+id/join_age"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/join_age"
+                app:layout_constraintTop_toBottomOf="@+id/join_age"
+                app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

@@ -1,17 +1,17 @@
 package kr.ac.kpu.ce2019152012.vegan_life.Adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kr.ac.kpu.ce2019152012.vegan_life.DataVo.RecipeDataVo
 import kr.ac.kpu.ce2019152012.vegan_life.R
 
-class HomeRecipeAdapter:
-    RecyclerView.Adapter<HomeRecipeAdapter.ViewHolder>() {
+class RecipeAdapter:
+    RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
 
     var dataList = mutableListOf<RecipeDataVo>()
 
@@ -24,16 +24,36 @@ class HomeRecipeAdapter:
         this.listener = listener
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.home_listview,parent,false)
+    var mPosition = 0
+    fun getPosition():Int{
+        return mPosition
+    }
 
-        return ViewHolder(view)
+    private fun setPosition(position: Int){
+        mPosition = position
+    }
+
+    fun addItem(dataVo: RecipeDataVo){
+        dataList.add(dataVo)
+        notifyDataSetChanged()
+    }
+
+    fun removeItem(position: Int){
+        if(position > 0){
+            dataList.removeAt(position)
+            notifyDataSetChanged()
+        }
+    }
+
+    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+        holder.bind(dataList[position])
     }
 
     override fun getItemCount(): Int = dataList.size
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.bind(dataList[position])
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.home_listview,parent,false)
+        return ViewHolder(view)
     }
 
     inner class ViewHolder(view: View): RecyclerView.ViewHolder(view){
@@ -53,4 +73,6 @@ class HomeRecipeAdapter:
             }
         }
     }
+
+
 }

@@ -9,55 +9,47 @@
     <fragment
         android:id="@+id/comunityFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.CommunityFragment"
-        android:label="ComunityFragment" />
+        android:label="ComunityFragment"
+        tools:layout="@layout/fragment_comunity" />
     <fragment
         android:id="@+id/homeFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.HomeFragment"
-        android:label="HomeFragment" >
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <argument
+            android:name="RecipeInfo"
+            app:argType="string"
+            android:defaultValue="Null"/>
         <action
-            android:id="@+id/action_homeFragment_to_home_detail1"
-            app:destination="@id/home_detail1" />
-        <action
-            android:id="@+id/action_homeFragment_to_home_detail2"
-            app:destination="@id/home_detail2" />
-        <action
-            android:id="@+id/action_homeFragment_to_home_detail3"
-            app:destination="@id/home_detail3" />
-        <action
-            android:id="@+id/action_homeFragment_to_home_detail4"
-            app:destination="@id/home_detail4" />
+            android:id="@+id/action_homeFragment_to_recipeNextFragment"
+            app:destination="@id/recipeNextFragment" />
     </fragment>
     <fragment
         android:id="@+id/myFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.MyFragment"
-        android:label="MyFragment" />
+        android:label="MyFragment"
+        tools:layout="@layout/fragment_my" />
     <fragment
         android:id="@+id/recipeFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.RecipeFragment"
-        android:label="RecipeFragment" />
+        android:label="RecipeFragment"
+        tools:layout="@layout/fragment_recipe" >
+        <argument
+            android:name="RecipeInfo"
+            app:argType="string"
+            android:defaultValue="Null"/>
+        <action
+            android:id="@+id/action_recipeFragment_to_recipeNextFragment"
+            app:destination="@id/recipeNextFragment" />
+    </fragment>
     <fragment
         android:id="@+id/calendarFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.CalendarFragment"
         android:label="fragment_calendar"
         tools:layout="@layout/fragment_calendar" />
     <fragment
-        android:id="@+id/home_detail1"
-        android:name="kr.ac.kpu.ce2019152012.vegan_life.Semitest.home_detail1"
-        android:label="fragment_detail1"
-        tools:layout="@layout/fragment_detail1" />
-    <fragment
-        android:id="@+id/home_detail2"
-        android:name="kr.ac.kpu.ce2019152012.vegan_life.Semitest.home_detail2"
-        android:label="fragment_detail2"
-        tools:layout="@layout/fragment_detail2" />
-    <fragment
-        android:id="@+id/home_detail3"
-        android:name="kr.ac.kpu.ce2019152012.vegan_life.Semitest.home_detail3"
-        android:label="fragment_detail3"
-        tools:layout="@layout/fragment_detail3" />
-    <fragment
-        android:id="@+id/home_detail4"
-        android:name="kr.ac.kpu.ce2019152012.vegan_life.Semitest.home_detail4"
-        android:label="fragment_detail4"
-        tools:layout="@layout/fragment_detail4" />
+        android:id="@+id/recipeNextFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.RecipeNextFragment"
+        android:label="RecipeNextFragment"
+        tools:layout="@layout/fragment_home_recommendrecipe" />
 </navigation>

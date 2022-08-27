@@ -1,4 +1,5 @@
-package kr.ac.kpu.ce2019152012.vegan_life.Semitest
+package kr.ac.kpu.ce2019152012.vegan_life.MainFragments
+
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,10 +12,10 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.firestoreSettings
 import com.google.firebase.ktx.Firebase
-import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentDetail4Binding
+import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentHomeRecommendrecipeBinding
 
-class home_detail4 : Fragment(){
-    private var _binding: FragmentDetail4Binding? = null
+class RecipeNextFragment : Fragment() {
+    private var _binding: FragmentHomeRecommendrecipeBinding? = null
     private val binding get() = _binding!!
 
     private var auth: FirebaseAuth? = null
@@ -25,7 +26,7 @@ class home_detail4 : Fragment(){
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentDetail4Binding.inflate(inflater,container,false)
+        _binding = FragmentHomeRecommendrecipeBinding.inflate(inflater, container, false)
         val view = binding.root
 
         return view
@@ -39,6 +40,7 @@ class home_detail4 : Fragment(){
         super.onDestroyView()
         _binding = null
     }
+
     private fun updateUI(user: FirebaseUser?) {
     }
 

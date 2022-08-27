@@ -183,10 +183,10 @@
                 android:id="@id/active_group"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="@+id/classification_subtitle"
-                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.235"
                 app:layout_constraintStart_toStartOf="@+id/classification_subtitle"
                 app:layout_constraintTop_toBottomOf="@+id/classification_subtitle">
 
@@ -234,6 +234,7 @@
                     android:textSize="13dp" />
 
             </LinearLayout>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/next_btn"
                 android:layout_width="350dp"
@@ -244,9 +245,9 @@
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/active_group"
                 app:layout_constraintHorizontal_bias="0.491"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/active_group"
                 app:layout_constraintTop_toBottomOf="@+id/active_group"
                 app:layout_constraintVertical_bias="0.0" />
 
