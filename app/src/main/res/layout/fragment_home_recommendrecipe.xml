@@ -43,7 +43,7 @@
 
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/foodimg"
                 android:layout_width="410dp"
                 android:layout_height="250dp"
                 android:layout_marginTop="8dp"
@@ -63,8 +63,8 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.073"
-                app:layout_constraintStart_toStartOf="@+id/imageView2"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+                app:layout_constraintStart_toStartOf="@+id/foodimg"
+                app:layout_constraintTop_toBottomOf="@+id/foodimg" />
 
             <LinearLayout
                 android:id="@+id/linearLayout6"
@@ -76,7 +76,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.992"
                 app:layout_constraintStart_toEndOf="@+id/txt_recipename"
-                app:layout_constraintTop_toBottomOf="@+id/imageView2">
+                app:layout_constraintTop_toBottomOf="@+id/foodimg">
 
                 <ImageView
                     android:id="@+id/btn_like"
@@ -116,9 +116,10 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
             <TextView
-                android:id="@+id/rv_ingredient_item"
+                android:id="@+id/ingredient_item"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:layout_constrainedWidth="true"
                 android:layout_marginTop="12dp"
                 app:layout_constraintEnd_toEndOf="@+id/ingredient"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -137,12 +138,12 @@
                 android:textStyle="bold"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/rv_ingredient_item"
-                app:layout_constraintTop_toBottomOf="@+id/rv_ingredient_item" />
+                app:layout_constraintStart_toStartOf="@+id/ingredient_item"
+                app:layout_constraintTop_toBottomOf="@+id/ingredient_item" />
 
             <TextView
-                android:id="@+id/rv_how_item"
-                android:layout_width="wrap_content"
+                android:id="@+id/how_item"
+                android:layout_width="350dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 app:layout_constraintEnd_toEndOf="@+id/how"

@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.FirebaseApp
@@ -490,7 +491,11 @@ class HomeFragment : Fragment() {
 
         Adapter.setOnItemClickListener(object : RecipeAdapter.OnItemClickListener {
             override fun onItemClick(v: View, data: RecipeDataVo, post: Int) {
-
+                val bundle = Bundle()
+                bundle.putParcelable("item",data)
+                view?.findNavController()?.navigate(R.id.action_homeFragment_to_recipeNextFragment,bundle)
+                    .run {
+                    }
             }
         })
     }

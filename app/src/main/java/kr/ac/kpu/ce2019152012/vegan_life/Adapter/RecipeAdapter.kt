@@ -4,7 +4,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import kr.ac.kpu.ce2019152012.vegan_life.DataVo.RecipeDataVo
@@ -16,33 +15,12 @@ class RecipeAdapter:
     var dataList = mutableListOf<RecipeDataVo>()
 
     interface OnItemClickListener {
-        fun onItemClick(v: View, data: RecipeDataVo, post: Int)
+        fun onItemClick(v: View, data: RecipeDataVo, pos: Int)
     }
 
     private var listener : OnItemClickListener?= null
     fun setOnItemClickListener(listener: OnItemClickListener){
         this.listener = listener
-    }
-
-    var mPosition = 0
-    fun getPosition():Int{
-        return mPosition
-    }
-
-    private fun setPosition(position: Int){
-        mPosition = position
-    }
-
-    fun addItem(dataVo: RecipeDataVo){
-        dataList.add(dataVo)
-        notifyDataSetChanged()
-    }
-
-    fun removeItem(position: Int){
-        if(position > 0){
-            dataList.removeAt(position)
-            notifyDataSetChanged()
-        }
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
@@ -67,9 +45,7 @@ class RecipeAdapter:
 
             val pos = adapterPosition
             if(pos != RecyclerView.NO_POSITION){
-                itemView.setOnClickListener {
-                    listener?.onItemClick(itemView, item, pos)
-                }
+                itemView.setOnClickListener { listener?.onItemClick(itemView, item, pos) }
             }
         }
     }

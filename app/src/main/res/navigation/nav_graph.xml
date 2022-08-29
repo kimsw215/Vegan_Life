@@ -18,8 +18,9 @@
         tools:layout="@layout/fragment_home" >
         <argument
             android:name="RecipeInfo"
-            app:argType="string"
-            android:defaultValue="Null"/>
+            app:argType="kr.ac.kpu.ce2019152012.vegan_life.DataVo.RecipeDataVo"
+            app:nullable="true"
+            android:defaultValue="@null" />
         <action
             android:id="@+id/action_homeFragment_to_recipeNextFragment"
             app:destination="@id/recipeNextFragment" />
@@ -34,13 +35,15 @@
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.RecipeFragment"
         android:label="RecipeFragment"
         tools:layout="@layout/fragment_recipe" >
-        <argument
-            android:name="RecipeInfo"
-            app:argType="string"
-            android:defaultValue="Null"/>
+
         <action
             android:id="@+id/action_recipeFragment_to_recipeNextFragment"
             app:destination="@id/recipeNextFragment" />
+        <argument
+            android:name="RecipeInfo"
+            app:argType="kr.ac.kpu.ce2019152012.vegan_life.DataVo.RecipeDataVo"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
     <fragment
         android:id="@+id/calendarFragment"
