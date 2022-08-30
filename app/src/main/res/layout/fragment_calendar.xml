@@ -265,7 +265,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ImageButton
-                android:id="@+id/Breakfast_image"
+                android:id="@+id/breakfast_image"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
@@ -285,8 +285,8 @@
                 android:text="아침"
                 android:textColor="@color/white"
                 android:textSize="10dp"
-                app:layout_constraintStart_toStartOf="@+id/Breakfast_image"
-                app:layout_constraintTop_toBottomOf="@+id/Breakfast_image" />
+                app:layout_constraintStart_toStartOf="@+id/breakfast_image"
+                app:layout_constraintTop_toBottomOf="@+id/breakfast_image" />
 
             <TextView
                 android:id="@+id/breakfast_kcal"
@@ -296,8 +296,8 @@
                 android:text="0kcal"
                 android:textColor="@color/black"
                 android:textSize="13dp"
-                app:layout_constraintEnd_toEndOf="@+id/Breakfast_image"
-                app:layout_constraintTop_toBottomOf="@+id/Breakfast_image" />
+                app:layout_constraintEnd_toEndOf="@+id/breakfast_image"
+                app:layout_constraintTop_toBottomOf="@+id/breakfast_image" />
 
             <ImageButton
                 android:id="@+id/lunch_image"
@@ -307,7 +307,7 @@
                 android:src="@drawable/addphoto"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.506"
-                app:layout_constraintStart_toEndOf="@+id/Breakfast_image"
+                app:layout_constraintStart_toEndOf="@+id/breakfast_image"
                 app:layout_constraintTop_toBottomOf="@+id/fatcontainer" />
 
             <TextView

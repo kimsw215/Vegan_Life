@@ -53,7 +53,18 @@
         android:id="@+id/calendarFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.CalendarFragment"
         android:label="fragment_calendar"
-        tools:layout="@layout/fragment_calendar" />
+        tools:layout="@layout/fragment_calendar" >
+        <argument
+            android:name="FoodData"
+            app:argType="kr.ac.kpu.ce2019152012.vegan_life.DataVo.CalendarFoodDataVo"
+            app:nullable="true" />
+        <action
+            android:id="@+id/action_calendarFragment_to_foodInputFragment"
+            app:destination="@id/foodInputFragment" />
+        <action
+            android:id="@+id/action_calendarFragment_to_foodinfoFragment"
+            app:destination="@id/foodinfoFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recipeNextFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.RecipeNextFragment"
@@ -63,5 +74,58 @@
         android:id="@+id/resetProfileFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.ResetProfileFragment"
         android:label="ResetProfileFragment"
-        tools:layout="@layout/fragment_resetprofile"/>
+        tools:layout="@layout/fragment_resetprofile">
+        <action
+            android:id="@+id/action_resetProfileFragment_to_myFragment"
+            app:destination="@id/myFragment"
+            app:popUpTo="@id/myFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodinputdetailFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.FoodAddDetailFragment"
+        android:label="FoodAddFragment"
+        tools:layout="@layout/fragment_calendar_foodinputdetail">
+        <argument
+            android:name="FoodData"
+            app:argType="kr.ac.kpu.ce2019152012.vegan_life.DataVo.CalendarFoodDataVo"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_foodinputdetailFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment"
+            app:popUpTo="@id/calendarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodInputFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.FoodInputFragment"
+        android:label="FoodAddInputFragment"
+        tools:layout="@layout/fragment_calendar_foodinput">
+        <argument
+            android:name="FoodData"
+            app:argType="kr.ac.kpu.ce2019152012.vegan_life.DataVo.CalendarFoodDataVo"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_foodInputFragment_to_foodinputdetailFragment"
+            app:destination="@id/foodinputdetailFragment" />
+        <action
+            android:id="@+id/action_foodInputFragment_to_calendarFragment"
+            app:destination="@id/calendarFragment"
+            app:popUpTo="@id/calendarFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodinfoFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.FoodInfoFragment"
+        android:label="FoodAdddetailFragment"
+        tools:layout="@layout/fragment_calendar_foodinfo">
+
+        <argument
+            android:name="FoodData"
+            app:argType="kr.ac.kpu.ce2019152012.vegan_life.DataVo.CalendarFoodDataVo"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_foodinfoFragment_to_foodInputFragment"
+            app:destination="@id/foodInputFragment" />
+    </fragment>
 </navigation>

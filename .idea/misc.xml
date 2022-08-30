@@ -6,6 +6,7 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/JoinActive_check.xml" value="0.198" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/button_background_selected.xml" value="0.1225" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/button_background_stroke.xml" value="0.1" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/calendar_foodtype_background_stroke.xml" value="0.189" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/circle_button_background_stroke.xml" value="0.2" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/edit_fail_background_stroke.xml" value="0.1825" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/fesco_circle_button_background_stroke.xml" value="0.179" />
@@ -20,9 +21,11 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/obo_circle_button_background_stroke.xml" value="0.179" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable-v24/vagan_circle_button_background_stroke.xml" value="0.103" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable/foodinput_active_background_stroke.xml" value="0.1525" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/drawable/search_background.xml" value="0.189" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_calendar_foodadd.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_calendar_fooddetail.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_calendar_foodinput.xml" value="0.264" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_checkfeed.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_community_input.xml" value="0.4" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_home_recommendrecipe.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_join_complete.xml" value="0.25364583333333335" />
@@ -40,6 +43,12 @@
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_resetprofile.xml" value="0.176" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_calendar.xml" value="0.2" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_calendar_foodadd.xml" value="0.20820863616930313" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_calendar_fooddetail.xml" value="0.20820863616930313" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_calendar_foodinfo.xml" value="0.20820863616930313" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_calendar_foodinput.xml" value="0.20820863616930313" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_calendar_foodinputdetail.xml" value="0.20820863616930313" />
+        <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_community_input.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_comunity.xml" value="0.20820863616930313" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_detail.xml" value="0.2" />
         <entry key="..\:/Users/82108/AndroidStudioProjects/Vegan_Life/app/src/main/res/layout/fragment_detail1.xml" value="0.20820863616930313" />

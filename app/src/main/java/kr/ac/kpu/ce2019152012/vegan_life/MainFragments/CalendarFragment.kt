@@ -1,20 +1,21 @@
 package kr.ac.kpu.ce2019152012.vegan_life.MainFragments
 
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.firestoreSettings
 import com.google.firebase.ktx.Firebase
 import kr.ac.kpu.ce2019152012.vegan_life.R
 import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentCalendarBinding
-import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentHomeBinding
+import java.time.LocalDate
+import java.util.*
 
 class CalendarFragment : Fragment() {
     private var _binding: FragmentCalendarBinding? = null
@@ -31,21 +32,59 @@ class CalendarFragment : Fragment() {
         _binding = FragmentCalendarBinding.inflate(inflater,container,false)
         val view = binding.root
 
+        // 요일 + 날짜 설정
+        val today: String? = doDayOfWeek()
+        binding.dayTitle.setText(today)
+
+        val current : LocalDate =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                LocalDate.now()
+        } else {
+            TODO("VERSION.SDK_INT < O")
+        }
+        var date = current.toString()
+        binding.datetime.setText(date)
+
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.breakfastImage.setOnClickListener {
+            if(binding.breakfastImage.drawable == null){
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment)
+            } else {
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment)
+            }
+        }
+        binding.lunchImage.setOnClickListener {
+            if(binding.breakfastImage.drawable == null){
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment)
+            } else {
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment)
+            }
+        }
+        binding.dinnerImage.setOnClickListener {
+            if(binding.breakfastImage.drawable == null){
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment)
+            } else {
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment)
+            }
+        }
+        binding.snackImage.setOnClickListener {
+            if(binding.breakfastImage.drawable == null){
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment)
+            } else {
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment)
+            }
+        }
+
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-    private fun updateUI(user: FirebaseUser?) {
-    }
-
-    private fun reload() {
     }
 
     fun setup() {
@@ -55,6 +94,28 @@ class CalendarFragment : Fragment() {
             isPersistenceEnabled = true
         }
         db.firestoreSettings = settings
+    }
+    private fun doDayOfWeek(): String? {
+        val cal: Calendar = Calendar.getInstance()
+        var strWeek: String? = null
+        val nWeek: Int = cal.get(Calendar.DAY_OF_WEEK)
+
+        if (nWeek == 1) {
+            strWeek = "일"
+        } else if (nWeek == 2) {
+            strWeek = "월"
+        } else if (nWeek == 3) {
+            strWeek = "화"
+        } else if (nWeek == 4) {
+            strWeek = "수"
+        } else if (nWeek == 5) {
+            strWeek = "목"
+        } else if (nWeek == 6) {
+            strWeek = "금"
+        } else if (nWeek == 7) {
+            strWeek = "토"
+        }
+        return strWeek
     }
 
     companion object {
