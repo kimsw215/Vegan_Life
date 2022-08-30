@@ -417,19 +417,6 @@ class RecipeFragment : Fragment() {
             Adapter.notifyDataSetChanged()
         }
 
-/*        for (i in 0..datas.size){
-            var recipeInfo = hashMapOf(
-                "FoodName" to datas[i].recipename,
-                "FoodImg" to datas[i].recipephoto,
-                "Ingredient" to datas[i].ingredient,
-                "How" to datas[i].how
-            )
-            db.collection(auth?.currentUser?.email.toString()).document(i.toString())
-                .set(recipeInfo, SetOptions.merge())
-                .addOnCanceledListener { Log.d("Recipe", "추천 레시피 입력 성공!")}
-                .addOnFailureListener { e -> Log.w("Recipe", "추천 레시피 입력 실패", e)  }
-        }*/
-
         Adapter.setOnItemClickListener(object : RecipeAdapter.OnItemClickListener {
             override fun onItemClick(v: View, data: RecipeDataVo, post: Int) {
                 val bundle = Bundle()

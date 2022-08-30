@@ -29,7 +29,11 @@
         android:id="@+id/myFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.MyFragment"
         android:label="MyFragment"
-        tools:layout="@layout/fragment_my" />
+        tools:layout="@layout/fragment_my" >
+        <action
+            android:id="@+id/action_myFragment_to_resetProfileFragment"
+            app:destination="@id/resetProfileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/recipeFragment"
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.RecipeFragment"
@@ -55,4 +59,9 @@
         android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.RecipeNextFragment"
         android:label="RecipeNextFragment"
         tools:layout="@layout/fragment_home_recommendrecipe" />
+    <fragment
+        android:id="@+id/resetProfileFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.ResetProfileFragment"
+        android:label="ResetProfileFragment"
+        tools:layout="@layout/fragment_resetprofile"/>
 </navigation>
