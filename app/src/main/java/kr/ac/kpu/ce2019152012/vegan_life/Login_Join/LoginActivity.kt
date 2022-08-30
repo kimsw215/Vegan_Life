@@ -37,22 +37,6 @@ class LoginActivity : AppCompatActivity() {
 
         var UserList = arrayListOf<String>()
 
-/*        db.collection(auth?.currentUser?.email.toString().trim())
-            .document("Info")
-            .get()
-            .addOnSuccessListener {
-                UserList.add(it["email"].toString().trim())
-                UserList.add(it["passwd"].toString().trim())
-                UserList.add(it["age"].toString().trim())
-                UserList.add(it["height"].toString().trim())
-                UserList.add(it["weight"].toString().trim())
-                UserList.add(it["nickname"].toString().trim())
-                UserList.add(it["basiccal"].toString().trim())
-                Log.d("userlist", UserList.toString().trim())
-            }.addOnFailureListener { exception ->
-                Log.d(TAG, "Error getting documents: ", exception)
-            }*/
-
         // 이메일로 로그인
         binding.loginBtn.setOnClickListener()
         {

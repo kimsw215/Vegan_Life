@@ -26,7 +26,6 @@ class MyFragment : Fragment() {
     private var auth: FirebaseAuth? = null
     private lateinit var db: FirebaseFirestore
 
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -62,7 +61,9 @@ class MyFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.setting.setOnClickListener {
-            view?.findNavController()?.navigate(R.id.action_myFragment_to_resetProfileFragment)
+            view?.findNavController()?.navigate(R.id.action_myFragment_to_resetProfileFragment).run {
+
+            }
         }
     }
 
@@ -84,9 +85,5 @@ class MyFragment : Fragment() {
             isPersistenceEnabled = true
         }
         db.firestoreSettings = settings
-    }
-
-    companion object {
-        private const val TAG = "EmailPassword"
     }
 }

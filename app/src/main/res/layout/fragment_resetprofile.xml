@@ -92,7 +92,6 @@
                 android:text="닉네임"
                 android:textColor="@color/black"
                 android:textSize="18dp"
-
                 app:layout_constraintEnd_toEndOf="@+id/resetprofile_insert_image"
                 app:layout_constraintHorizontal_bias="0.311"
                 app:layout_constraintStart_toStartOf="@+id/resetprofile_insert_image"
@@ -380,7 +379,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/txt_weight" />
 
             <EditText
-                android:id="@+id/join_age"
+                android:id="@+id/resetprofile_age"
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:layout_marginTop="8dp"
@@ -408,10 +407,10 @@
                 android:textColor="@color/white"
                 android:textSize="20dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/join_age"
+                app:layout_constraintEnd_toEndOf="@+id/resetprofile_age"
                 app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintStart_toStartOf="@+id/join_age"
-                app:layout_constraintTop_toBottomOf="@+id/join_age"
+                app:layout_constraintStart_toStartOf="@+id/resetprofile_age"
+                app:layout_constraintTop_toBottomOf="@+id/resetprofile_age"
                 app:layout_constraintVertical_bias="0.0" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

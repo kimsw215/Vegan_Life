@@ -1,5 +1,6 @@
 package kr.ac.kpu.ce2019152012.vegan_life.MainFragments
 
+import android.annotation.SuppressLint
 import android.app.AlarmManager
 import android.content.BroadcastReceiver
 import android.content.Context
@@ -63,6 +64,7 @@ class HomeFragment : Fragment() {
         _context = context
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -85,23 +87,13 @@ class HomeFragment : Fragment() {
         // 24시간 자정 기준 이벤트 변화
 //        broad_setup()
 
-
-
-        var UserList = arrayListOf<String>()
-
         db.collection(auth?.currentUser?.email.toString().trim())
             .document("Info")
             .get()
             .addOnSuccessListener {
-                UserList.add(it["nickname"].toString().trim())
-
-                binding.homeNickname.text = it["nickname"].toString().trim() + " 님"
+                binding.homeNickname.text = it["nickname"]?.toString()?.trim() + " 님"
                 binding.homeRecipeName.text = it["nickname"].toString().trim() + " 님의 추천 식단"
 
-                Log.d("info", it["nickname"].toString().trim())
-                UserList.add(it["basiccal"].toString().trim())
-
-                Log.d("info", "닉네임, 칼로리" + UserList.toString().trim())
             }.addOnFailureListener { exception ->
                 Log.d("error", "Error getting documents: ", exception)
             }
@@ -147,6 +139,7 @@ class HomeFragment : Fragment() {
         db.firestoreSettings = settings
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private fun initRecycler(){
         Adapter = RecipeAdapter()
         Gmanager = GridLayoutManager(requireContext(), RawCount,LinearLayoutManager.HORIZONTAL,false)

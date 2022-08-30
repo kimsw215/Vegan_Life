@@ -154,9 +154,9 @@ class JoinStepTwoActivity : AppCompatActivity() {
                     "passwd" to myData?.password,
                     "nickname" to myData?.nickname,
                     "image" to myData?.profileImage,
-                    "hieght" to binding.joinHeight.text.toString().trim(),
-                    "weight" to binding.joinWeight.text.toString().trim(),
-                    "age" to binding.joinAge.text.toString().trim(),
+                    "height" to binding.joinHeight.text,
+                    "weight" to binding.joinWeight.text,
+                    "age" to binding.joinAge.text,
                     "basiccal" to basicCal,
                     "vegantype" to VeganType,
                     "sex" to SexType
