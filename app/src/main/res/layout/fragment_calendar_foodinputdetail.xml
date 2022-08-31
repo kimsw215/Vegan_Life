@@ -123,6 +123,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/input_kcal" />
 
             <Spinner
+                android:entries="@array/list"
                 android:id="@+id/spinner"
                 android:layout_width="80dp"
                 android:layout_height="40dp"
@@ -132,6 +133,8 @@
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toEndOf="@+id/edit_menu3"
                 app:layout_constraintTop_toBottomOf="@+id/one_serving" />
+
+
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_menu3"

@@ -3,4 +3,8 @@
     <string name="KAKAO_API_KEY">ae9dd319c362c728157d2407bbce7672</string>
     <string name="cm">cm</string>
     <string name="kg">kg</string>
+    <string-array name="list">
+        <item>g</item>
+        <item>ml</item>
+    </string-array>
 </resources>
