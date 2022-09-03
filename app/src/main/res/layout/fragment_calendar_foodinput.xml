@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainFragments.FoodInputFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -56,18 +58,22 @@
                 app:layout_constraintStart_toStartOf="@+id/linearLayout"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
-            <ImageButton
-                android:id="@+id/food"
+            <LinearLayout
+                android:id="@+id/foodl_back"
                 android:layout_width="110dp"
                 android:layout_height="110dp"
                 android:layout_marginTop="4dp"
-                android:background="@color/white"
-                android:src="@drawable/foodinput_addphoto"
+                android:background="@drawable/foodinput_addphoto"
                 app:layout_constraintEnd_toEndOf="@+id/photo_subtitle"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/photo_subtitle"
-                app:layout_constraintTop_toBottomOf="@+id/photo_subtitle" />
+                app:layout_constraintTop_toBottomOf="@+id/photo_subtitle" >
 
+                <ImageView
+                    android:id="@+id/food"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
 
             <androidx.appcompat.widget.SearchView
                 android:id="@+id/search_food"
@@ -75,46 +81,65 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/search_background"
+                app:queryHint="음식을 검색해주세요."
+                app:searchIcon="@drawable/search_icon"
+                app:closeIcon="@drawable/close_icon"
+                app:iconifiedByDefault="false"
                 app:layout_constraintEnd_toEndOf="@+id/foodname_subtitle"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/foodname_subtitle"
                 app:layout_constraintTop_toBottomOf="@+id/foodname_subtitle" />
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/searchRecycler"
+                android:layout_width="340dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintEnd_toEndOf="@+id/search_food"
+                app:layout_constraintStart_toStartOf="@+id/search_food"
+                app:layout_constraintTop_toBottomOf="@+id/search_food"
+                tools:listitem="@layout/search_listview" />
+
             <TextView
-                android:id="@+id/food1_name"
+                android:id="@+id/subText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
+                android:layout_marginTop="160dp"
+                android:text="선택한 음식 목록"
+                android:textColor="@color/black"
+                android:textSize="15dp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="@+id/foodname_subtitle"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/foodname_subtitle"
+                app:layout_constraintTop_toBottomOf="@+id/foodname_subtitle" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/food1_name"
+                android:layout_width="340dp"
+                android:layout_height="70dp"
+                android:layout_marginTop="140dp"
                 android:text="된장찌개"
                 android:textColor="@color/black"
                 android:textSize="13dp"
-                app:layout_constraintStart_toStartOf="@+id/search_food"
-                app:layout_constraintTop_toBottomOf="@+id/search_food" />
+                app:layout_constraintEnd_toEndOf="@+id/searchRecycler"
+                app:layout_constraintStart_toStartOf="@+id/searchRecycler"
+                app:layout_constraintTop_toBottomOf="@+id/search_food"
+                tools:listitem="@layout/calendar_listview" />
 
             <TextView
                 android:id="@+id/time_subtitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="60dp"
+                android:layout_marginTop="24dp"
                 android:text="시간"
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="@+id/food1_name"
+                app:layout_constraintEnd_toEndOf="@+id/subText"
+                app:layout_constraintHorizontal_bias="0.155"
+                app:layout_constraintStart_toStartOf="@+id/subText"
                 app:layout_constraintTop_toBottomOf="@+id/food1_name" />
-
-            <TextView
-                android:id="@+id/food1_kacl"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:text="360kcal"
-                android:textColor="@color/black"
-                android:textSize="13dp"
-                app:layout_constraintEnd_toEndOf="@+id/search_food"
-                app:layout_constraintHorizontal_bias="0.967"
-                app:layout_constraintStart_toEndOf="@+id/food1_name"
-                app:layout_constraintTop_toBottomOf="@+id/search_food" />
 
             <ImageButton
                 android:id="@+id/btn_addfood"
@@ -125,7 +150,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.848"
                 app:layout_constraintStart_toEndOf="@+id/foodname_subtitle"
-                app:layout_constraintTop_toBottomOf="@+id/food" />
+                app:layout_constraintTop_toBottomOf="@+id/foodl_back" />
 
             <TextView
                 android:id="@+id/foodname_subtitle"
@@ -136,23 +161,23 @@
                 android:textColor="@color/black"
                 android:textSize="15dp"
                 android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/food"
+                app:layout_constraintEnd_toEndOf="@+id/foodl_back"
                 app:layout_constraintHorizontal_bias="0.019"
-                app:layout_constraintStart_toStartOf="@+id/food"
-                app:layout_constraintTop_toBottomOf="@+id/food" />
+                app:layout_constraintStart_toStartOf="@+id/foodl_back"
+                app:layout_constraintTop_toBottomOf="@+id/foodl_back" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/datetimetextField"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="340dp"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 app:hintAnimationEnabled="false"
                 app:hintEnabled="false"
-                app:layout_constraintEnd_toEndOf="@+id/time_subtitle"
+                app:layout_constraintEnd_toEndOf="@+id/search_food"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/time_subtitle"
+                app:layout_constraintStart_toStartOf="@+id/search_food"
                 app:layout_constraintTop_toBottomOf="@+id/time_subtitle">
 
                 <com.google.android.material.textfield.TextInputEditText
@@ -160,96 +185,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_background_stroke"
-                    android:hint="2022-05-15, 21시 26분"
+                    android:hint="2022-05-15"
+                    android:inputType="date"
                     app:hintTextColor="@color/black" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <TextView
-                android:id="@+id/classification_subtitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="52dp"
-                android:text="분류"
-                android:textColor="@color/black"
-                android:textSize="15dp"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="@+id/datetimetextField"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/datetimetextField"
-                app:layout_constraintTop_toBottomOf="@+id/datetimetextField" />
-
-            <LinearLayout
-                android:id="@id/active_group"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:orientation="horizontal"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.235"
-                app:layout_constraintStart_toStartOf="@+id/classification_subtitle"
-                app:layout_constraintTop_toBottomOf="@+id/classification_subtitle">
-
-                <TextView
-                    android:id="@+id/active_breakfast"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/calendar_foodtime_background_stroke"
-                    android:gravity="center"
-                    android:text="아침"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
-
-                <TextView
-                    android:id="@+id/active_lunch"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:background="@drawable/calendar_foodtime_background_stroke"
-                    android:gravity="center"
-                    android:text="점심"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
-
-                <TextView
-                    android:id="@+id/active_dinner"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:background="@drawable/calendar_foodtime_background_stroke"
-                    android:gravity="center"
-                    android:text="저녁"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
-
-                <TextView
-                    android:id="@+id/active_snack"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:background="@drawable/calendar_foodtime_background_stroke"
-                    android:gravity="center"
-                    android:text="간식"
-                    android:textColor="@color/black"
-                    android:textSize="13dp" />
-
-            </LinearLayout>
-
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/next_btn"
-                android:layout_width="350dp"
+                android:layout_width="340dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="24dp"
+                android:layout_marginTop="116dp"
+                android:layout_marginBottom="30dp"
                 android:background="@color/primaycolor"
                 android:text="완료"
                 android:textColor="@color/white"
                 android:textSize="18dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="@+id/active_group"
-                app:layout_constraintHorizontal_bias="0.491"
-                app:layout_constraintStart_toStartOf="@+id/active_group"
-                app:layout_constraintTop_toBottomOf="@+id/active_group"
+                app:layout_constraintEnd_toEndOf="@+id/datetimetextField"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/datetimetextField"
+                app:layout_constraintTop_toBottomOf="@+id/datetimetextField"
                 app:layout_constraintVertical_bias="0.0" />
-
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

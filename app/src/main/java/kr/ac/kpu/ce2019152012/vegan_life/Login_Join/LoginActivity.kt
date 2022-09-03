@@ -53,14 +53,7 @@ class LoginActivity : AppCompatActivity() {
                         intent.putExtra("userId", binding.editId.text.toString())
                         startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
                         finish()
-     /*                   if (binding.editId.text.toString().trim() in UserList) {
-                            val intent = Intent(this, MainActivity::class.java)
-                            intent.putExtra("userId", binding.editId.text.toString())
-                            startActivity(intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP))
-                            finish()
-                        } else {
-                            Log.w(TAG, "Error getting documents ")
-                        }*/
+
                     } else {
                         Toast.makeText(this, "로그인에 실패하였습니다.", Toast.LENGTH_SHORT).show()
                         updateUI(null)
@@ -86,8 +79,6 @@ class LoginActivity : AppCompatActivity() {
                 binding.loginBtn.isEnabled = false
             }
         }
-
-
     }
 
     public override fun onStart() {
@@ -99,20 +90,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun sendEmailVerification() {
-        // [START send_email_verification]
-        val user = auth?.currentUser!!
-        user.sendEmailVerification()
-            .addOnCompleteListener(this) { task ->
-                // Email Verification sent
-            }
-        // [END send_email_verification]
-    }
-
     private fun updateUI(user: FirebaseUser?) {
-    }
-
-    private fun reload() {
     }
 
     fun setup() {
@@ -122,17 +100,5 @@ class LoginActivity : AppCompatActivity() {
             isPersistenceEnabled = true
         }
         db.firestoreSettings = settings
-    }
-
-    fun setup2() {
-        db = FirebaseFirestore.getInstance()
-        val settings = firestoreSettings {
-            isPersistenceEnabled = true
-        }
-        db.firestoreSettings = settings
-    }
-
-    companion object {
-        private const val TAG = "EmailPassword"
     }
 }

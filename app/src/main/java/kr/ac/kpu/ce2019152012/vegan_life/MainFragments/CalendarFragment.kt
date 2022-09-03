@@ -2,6 +2,7 @@ package kr.ac.kpu.ce2019152012.vegan_life.MainFragments
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -52,34 +53,48 @@ class CalendarFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.breakfastImage.setOnClickListener {
+            val bundle = Bundle()
             if(binding.breakfastImage.drawable == null){
-                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment)
+                var timelist : String = binding.datetime.toString() + "아침"
+                bundle.putString("time",timelist)
+                Log.d("time",timelist.slice(timelist.length-2 until timelist.length))
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment,bundle)
+                    .run {
+                        bundle.clear() }
             } else {
-                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment)
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment,bundle)
             }
         }
         binding.lunchImage.setOnClickListener {
+            var timelist : String = binding.datetime.toString() + "점심"
+            val bundle = Bundle()
+            bundle.putString("time",timelist)
             if(binding.breakfastImage.drawable == null){
-                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment)
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment,bundle)
             } else {
-                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment)
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment,bundle)
             }
         }
         binding.dinnerImage.setOnClickListener {
+            var timelist : String = binding.datetime.toString() + "저녁"
+            val bundle = Bundle()
+            bundle.putString("time",timelist)
             if(binding.breakfastImage.drawable == null){
-                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment)
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment,bundle)
             } else {
-                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment)
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment,bundle)
             }
         }
         binding.snackImage.setOnClickListener {
+            var timelist : String = binding.datetime.toString() + "간식"
+            val bundle = Bundle()
+            bundle.putString("time",timelist)
             if(binding.breakfastImage.drawable == null){
-                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment)
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment,bundle)
             } else {
-                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment)
+                view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment,bundle)
             }
         }
-
     }
 
     override fun onDestroyView() {
@@ -116,9 +131,5 @@ class CalendarFragment : Fragment() {
             strWeek = "토"
         }
         return strWeek
-    }
-
-    companion object {
-        private const val TAG = "EmailPassword"
     }
 }

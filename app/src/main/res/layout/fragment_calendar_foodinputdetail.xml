@@ -16,7 +16,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp">
 
-
             <TextView
                 android:id="@+id/txt_title"
                 android:layout_width="wrap_content"
@@ -71,8 +70,8 @@
                 app:layout_constraintStart_toStartOf="@+id/txt_subtitle1"
                 app:layout_constraintTop_toBottomOf="@+id/txt_subtitle1" />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/input_menu"
+            <EditText
+                android:id="@+id/input_name"
                 android:layout_width="360dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
@@ -91,12 +90,12 @@
                 android:text="칼로리 (kcal)"
                 android:textColor="@color/black"
                 android:textSize="13dp"
-                app:layout_constraintEnd_toEndOf="@+id/input_menu"
+                app:layout_constraintEnd_toEndOf="@+id/input_name"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/input_menu"
-                app:layout_constraintTop_toBottomOf="@+id/input_menu" />
+                app:layout_constraintStart_toStartOf="@+id/input_name"
+                app:layout_constraintTop_toBottomOf="@+id/input_name" />
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/input_kcal"
                 android:layout_width="360dp"
                 android:layout_height="40dp"
@@ -131,13 +130,11 @@
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toEndOf="@+id/edit_menu3"
+                app:layout_constraintStart_toEndOf="@+id/input_capacity"
                 app:layout_constraintTop_toBottomOf="@+id/one_serving" />
 
-
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/edit_menu3"
+            <EditText
+                android:id="@+id/input_capacity"
                 android:layout_width="250dp"
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
@@ -155,8 +152,8 @@
                 android:layout_height="23dp"
                 android:layout_marginTop="40dp"
                 android:src="@drawable/rice"
-                app:layout_constraintStart_toStartOf="@+id/edit_menu3"
-                app:layout_constraintTop_toBottomOf="@+id/edit_menu3" />
+                app:layout_constraintStart_toStartOf="@+id/input_capacity"
+                app:layout_constraintTop_toBottomOf="@+id/input_capacity" />
 
             <ImageView
                 android:id="@+id/protein_egg"
@@ -206,7 +203,7 @@
                 app:layout_constraintStart_toStartOf="@+id/protein_egg"
                 app:layout_constraintTop_toBottomOf="@+id/protein_egg" />
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/input_fat"
                 android:layout_width="100dp"
                 android:layout_height="40dp"
@@ -233,7 +230,7 @@
                 app:layout_constraintStart_toEndOf="@+id/fat_cheese"
                 app:layout_constraintTop_toTopOf="@+id/fat_cheese" />
 
-            <com.google.android.material.textfield.TextInputEditText
+            <EditText
                 android:id="@+id/input_car"
                 android:layout_width="100dp"
                 android:layout_height="40dp"

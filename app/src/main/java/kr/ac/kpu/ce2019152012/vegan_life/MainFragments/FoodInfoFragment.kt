@@ -30,6 +30,12 @@ class FoodInfoFragment : Fragment() {
         _binding = FragmentCalendarFoodinfoBinding.inflate(inflater,container,false)
         val view = binding.root
 
+        val bundle = Bundle()
+        val time: String = bundle.getString("time").toString()
+
+        binding.txtTitle.text = time.substring(time.length-2,time.length)
+        binding.foodDetailDatetime.text = time.substring(0,time.length-3)
+
         return view
     }
 

@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
-        android:text="2022-05-15, 21시 26분"
+        android:text="2022-09-01"
         android:textColor="@color/graycolor"
         android:textSize="15dp"
         android:textStyle="normal"

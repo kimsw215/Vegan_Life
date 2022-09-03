@@ -84,7 +84,7 @@
                     android:layout_height="20dp"
                     android:paddingLeft="5dp"
                     android:paddingTop="5dp"
-                    android:src="@drawable/like" />
+                    android:src="@drawable/like"/>
 
 
             </LinearLayout>

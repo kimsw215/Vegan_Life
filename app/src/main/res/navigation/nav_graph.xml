@@ -88,12 +88,10 @@
         <argument
             android:name="FoodData"
             app:argType="kr.ac.kpu.ce2019152012.vegan_life.DataVo.CalendarFoodDataVo"
-            app:nullable="true"
-            android:defaultValue="@null" />
+            app:nullable="true" />
         <action
-            android:id="@+id/action_foodinputdetailFragment_to_calendarFragment"
-            app:destination="@id/calendarFragment"
-            app:popUpTo="@id/calendarFragment" />
+            android:id="@+id/action_foodinputdetailFragment_to_foodInputFragment"
+            app:destination="@id/foodInputFragment" />
     </fragment>
     <fragment
         android:id="@+id/foodInputFragment"

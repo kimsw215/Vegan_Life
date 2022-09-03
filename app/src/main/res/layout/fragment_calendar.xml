@@ -22,7 +22,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="28dp"
-                android:text="금요일"
+                android:text="목요일"
                 android:textColor="@color/black"
                 android:textSize="18dp"
                 android:textStyle="bold"
@@ -36,7 +36,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="2022-08-05"
+                android:text="2022-09-05"
                 android:textColor="@color/unabletetxt"
                 android:textSize="15dp"
                 app:layout_constraintEnd_toEndOf="@+id/day_title"
@@ -264,16 +264,24 @@
                     app:layout_constraintTop_toTopOf="@+id/fat_intake_kacl" />
             </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <ImageButton
-                android:id="@+id/breakfast_image"
+            <LinearLayout
+                android:id="@+id/breakfast_image_back"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
-                android:src="@drawable/addphoto"
+                android:background="@drawable/addphoto"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="@+id/carcontainer"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/carcontainer"
-                app:layout_constraintTop_toBottomOf="@+id/carcontainer" />
+                app:layout_constraintTop_toBottomOf="@+id/carcontainer" >
+
+                <ImageView
+                    android:id="@+id/breakfast_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/breakfast_title"
@@ -285,8 +293,8 @@
                 android:text="아침"
                 android:textColor="@color/white"
                 android:textSize="10dp"
-                app:layout_constraintStart_toStartOf="@+id/breakfast_image"
-                app:layout_constraintTop_toBottomOf="@+id/breakfast_image" />
+                app:layout_constraintStart_toStartOf="@+id/breakfast_image_back"
+                app:layout_constraintTop_toBottomOf="@+id/breakfast_image_back" />
 
             <TextView
                 android:id="@+id/breakfast_kcal"
@@ -296,19 +304,25 @@
                 android:text="0kcal"
                 android:textColor="@color/black"
                 android:textSize="13dp"
-                app:layout_constraintEnd_toEndOf="@+id/breakfast_image"
-                app:layout_constraintTop_toBottomOf="@+id/breakfast_image" />
+                app:layout_constraintEnd_toEndOf="@+id/breakfast_image_back"
+                app:layout_constraintTop_toBottomOf="@+id/breakfast_image_back" />
 
-            <ImageButton
-                android:id="@+id/lunch_image"
+            <LinearLayout
+                android:id="@+id/lunch_image_back"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="32dp"
-                android:src="@drawable/addphoto"
+                android:background="@drawable/addphoto"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.506"
-                app:layout_constraintStart_toEndOf="@+id/breakfast_image"
-                app:layout_constraintTop_toBottomOf="@+id/fatcontainer" />
+                app:layout_constraintStart_toEndOf="@+id/breakfast_image_back"
+                app:layout_constraintTop_toBottomOf="@+id/fatcontainer" >
+                <ImageView
+                    android:id="@+id/lunch_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/lunch_title"
@@ -320,8 +334,8 @@
                 android:text="점심"
                 android:textColor="@color/white"
                 android:textSize="10dp"
-                app:layout_constraintStart_toStartOf="@+id/lunch_image"
-                app:layout_constraintTop_toBottomOf="@+id/lunch_image" />
+                app:layout_constraintStart_toStartOf="@+id/lunch_image_back"
+                app:layout_constraintTop_toBottomOf="@+id/lunch_image_back" />
 
 
             <TextView
@@ -333,20 +347,25 @@
                 android:text="0kcal"
                 android:textColor="@color/black"
                 android:textSize="13dp"
-                app:layout_constraintEnd_toEndOf="@+id/lunch_image"
-                app:layout_constraintTop_toBottomOf="@+id/lunch_image" />
+                app:layout_constraintEnd_toEndOf="@+id/lunch_image_back"
+                app:layout_constraintTop_toBottomOf="@+id/lunch_image_back" />
 
 
-            <ImageButton
-                android:id="@+id/dinner_image"
+            <LinearLayout
+                android:id="@+id/dinner_image_back"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="52dp"
-                android:src="@drawable/addphoto"
+                android:background="@drawable/addphoto"
                 app:layout_constraintEnd_toEndOf="@+id/breakfast_title"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/breakfast_title"
-                app:layout_constraintTop_toBottomOf="@+id/breakfast_title" />
+                app:layout_constraintTop_toBottomOf="@+id/breakfast_title" >
+                <ImageView
+                    android:id="@+id/dinner_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/dinner_title"
@@ -358,8 +377,8 @@
                 android:text="저녁"
                 android:textColor="@color/white"
                 android:textSize="10dp"
-                app:layout_constraintStart_toStartOf="@+id/dinner_image"
-                app:layout_constraintTop_toBottomOf="@+id/dinner_image" />
+                app:layout_constraintStart_toStartOf="@+id/dinner_image_back"
+                app:layout_constraintTop_toBottomOf="@+id/dinner_image_back" />
 
 
             <TextView
@@ -370,20 +389,27 @@
                 android:text="0kcal"
                 android:textColor="@color/black"
                 android:textSize="13dp"
-                app:layout_constraintEnd_toEndOf="@+id/dinner_image"
-                app:layout_constraintTop_toBottomOf="@+id/dinner_image" />
+                app:layout_constraintEnd_toEndOf="@+id/dinner_image_back"
+                app:layout_constraintTop_toBottomOf="@+id/dinner_image_back" />
 
 
-            <ImageButton
-                android:id="@+id/snack_image"
+            <LinearLayout
+                android:id="@+id/snack_image_back"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
                 android:layout_marginTop="52dp"
-                android:src="@drawable/addphoto"
+                android:background="@drawable/addphoto"
+                android:orientation="vertical"
                 app:layout_constraintEnd_toEndOf="@+id/lunch_title"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="@+id/lunch_title"
-                app:layout_constraintTop_toBottomOf="@+id/lunch_title" />
+                app:layout_constraintTop_toBottomOf="@+id/lunch_title" >
+                <ImageView
+                    android:id="@+id/snack_image"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/snack_title"
@@ -395,10 +421,10 @@
                 android:text="간식"
                 android:textColor="@color/white"
                 android:textSize="10dp"
-                app:layout_constraintEnd_toEndOf="@+id/snack_image"
+                app:layout_constraintEnd_toEndOf="@+id/snack_image_back"
                 app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="@+id/snack_image"
-                app:layout_constraintTop_toBottomOf="@+id/snack_image" />
+                app:layout_constraintStart_toStartOf="@+id/snack_image_back"
+                app:layout_constraintTop_toBottomOf="@+id/snack_image_back" />
 
             <TextView
                 android:id="@+id/snack_kcal"
@@ -408,10 +434,10 @@
                 android:text="0kcal"
                 android:textColor="@color/black"
                 android:textSize="13dp"
-                app:layout_constraintEnd_toEndOf="@+id/snack_image"
+                app:layout_constraintEnd_toEndOf="@+id/snack_image_back"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintStart_toEndOf="@+id/snack_title"
-                app:layout_constraintTop_toBottomOf="@+id/snack_image" />
+                app:layout_constraintTop_toBottomOf="@+id/snack_image_back" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
