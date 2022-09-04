@@ -101,7 +101,7 @@
                 android:layout_height="40dp"
                 android:layout_marginTop="8dp"
                 android:background="@drawable/button_background_stroke"
-                android:inputType="number"
+                android:inputType="numberSigned"
                 app:hintTextColor="@color/hintcolor"
                 app:layout_constraintEnd_toEndOf="@+id/kcal_name"
                 app:layout_constraintHorizontal_bias="0.0"

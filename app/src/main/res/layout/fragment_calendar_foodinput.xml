@@ -72,7 +72,8 @@
                 <ImageView
                     android:id="@+id/food"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent" />
+                    android:layout_height="match_parent"
+                    android:src="@drawable/asparagus_cream_pasta"/>
             </LinearLayout>
 
             <androidx.appcompat.widget.SearchView
@@ -115,9 +116,9 @@
                 app:layout_constraintTop_toBottomOf="@+id/foodname_subtitle" />
 
             <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/food1_name"
+                android:id="@+id/selected_food"
                 android:layout_width="340dp"
-                android:layout_height="70dp"
+                android:layout_height="65dp"
                 android:layout_marginTop="140dp"
                 android:text="된장찌개"
                 android:textColor="@color/black"
@@ -139,7 +140,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/subText"
                 app:layout_constraintHorizontal_bias="0.155"
                 app:layout_constraintStart_toStartOf="@+id/subText"
-                app:layout_constraintTop_toBottomOf="@+id/food1_name" />
+                app:layout_constraintTop_toBottomOf="@+id/selected_food" />
 
             <ImageButton
                 android:id="@+id/btn_addfood"
@@ -181,7 +182,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/time_subtitle">
 
                 <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/edit_id"
+                    android:id="@+id/edit_date"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_background_stroke"

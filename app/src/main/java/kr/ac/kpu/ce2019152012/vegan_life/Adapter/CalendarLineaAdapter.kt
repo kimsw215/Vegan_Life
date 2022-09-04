@@ -15,6 +15,7 @@ class CalendarLineaAdapter:
 
     interface OnItemClickListener {
         fun onItemClick(v: View, data: CalendarFoodListDataVo, pos: Int)
+//        val onClickDelte: (data : CalendarFoodListDataVo) -> Unit
     }
 
     private var listener : OnItemClickListener?= null
@@ -46,7 +47,7 @@ class CalendarLineaAdapter:
 
             val pos = adapterPosition
             if(pos != RecyclerView.NO_POSITION){
-                itemView.setOnClickListener { listener?.onItemClick(itemView, item, pos) }
+                delete.setOnClickListener { listener?.onItemClick(itemView, item, pos) }
             }
         }
     }

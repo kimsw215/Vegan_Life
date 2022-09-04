@@ -135,6 +135,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/car_name" />
 
                 <TextView
+                    android:id="@+id/Max_cal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="12dp"
@@ -200,6 +201,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/textView8" />
 
                 <TextView
+                    android:id="@+id/Max_pro"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -266,6 +268,7 @@
 
 
                 <TextView
+                    android:id="@+id/Max_fat"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"

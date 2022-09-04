@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
@@ -33,6 +34,11 @@ class CalendarFragment : Fragment() {
         _binding = FragmentCalendarBinding.inflate(inflater,container,false)
         val view = binding.root
 
+        FirebaseApp.initializeApp(requireActivity())
+        auth = FirebaseAuth.getInstance()
+
+        setup()
+
         // 요일 + 날짜 설정
         val today: String? = doDayOfWeek()
         binding.dayTitle.setText(today)
@@ -46,17 +52,30 @@ class CalendarFragment : Fragment() {
         var date = current.toString()
         binding.datetime.setText(date)
 
+        // 사용자의 탄단지 설정
+        db.collection(auth?.currentUser?.email.toString()).document("Info")
+            .get().addOnSuccessListener {
+                var cal: Int = (it["basiccal"].toString().toDouble() * (0.5)).toInt()
+                var pro: Int = (it["basiccal"].toString().toDouble() * (0.3)).toInt()
+                var fat: Int = (it["basiccal"].toString().toDouble() * (0.2)).toInt()
+
+                binding.carKcal.text = "/" + cal.toString() + "g"
+                binding.proteinKcal.text = "/" + pro.toString() + "g"
+                binding.fatKcal.text = "/" + fat.toString() + "g"
+            }
+
         return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+
         binding.breakfastImage.setOnClickListener {
             val bundle = Bundle()
             if(binding.breakfastImage.drawable == null){
-                var timelist : String = binding.datetime.toString() + "아침"
-                bundle.putString("time",timelist)
+                var timelist : String = binding.datetime.text.toString() + "아침"
+                bundle.putString("daytime",timelist)
                 Log.d("time",timelist.slice(timelist.length-2 until timelist.length))
                 view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment,bundle)
                     .run {
@@ -66,9 +85,9 @@ class CalendarFragment : Fragment() {
             }
         }
         binding.lunchImage.setOnClickListener {
-            var timelist : String = binding.datetime.toString() + "점심"
+            var timelist : String = binding.datetime.text.toString() + "점심"
             val bundle = Bundle()
-            bundle.putString("time",timelist)
+            bundle.putString("daytime",timelist)
             if(binding.breakfastImage.drawable == null){
                 view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment,bundle)
             } else {
@@ -76,9 +95,9 @@ class CalendarFragment : Fragment() {
             }
         }
         binding.dinnerImage.setOnClickListener {
-            var timelist : String = binding.datetime.toString() + "저녁"
+            var timelist : String = binding.datetime.text.toString() + "저녁"
             val bundle = Bundle()
-            bundle.putString("time",timelist)
+            bundle.putString("daytime",timelist)
             if(binding.breakfastImage.drawable == null){
                 view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment,bundle)
             } else {
@@ -86,9 +105,9 @@ class CalendarFragment : Fragment() {
             }
         }
         binding.snackImage.setOnClickListener {
-            var timelist : String = binding.datetime.toString() + "간식"
+            var timelist : String = binding.datetime.text.toString() + "간식"
             val bundle = Bundle()
-            bundle.putString("time",timelist)
+            bundle.putString("daytime",timelist)
             if(binding.breakfastImage.drawable == null){
                 view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment,bundle)
             } else {

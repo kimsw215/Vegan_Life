@@ -6,12 +6,14 @@ import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import android.content.IntentFilter
+import android.os.Build
 import android.os.Bundle
 import android.os.IBinder
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
@@ -27,6 +29,8 @@ import kr.ac.kpu.ce2019152012.vegan_life.Adapter.RecipeAdapter
 import kr.ac.kpu.ce2019152012.vegan_life.DataVo.RecipeDataVo
 import kr.ac.kpu.ce2019152012.vegan_life.R
 import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentHomeBinding
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class HomeFragment : Fragment(){
     private var _binding: FragmentHomeBinding? = null
@@ -53,6 +57,7 @@ class HomeFragment : Fragment(){
         _context = context
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("SetTextI18n")
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -79,6 +84,22 @@ class HomeFragment : Fragment(){
                 Log.d("error", "Error getting documents: ", exception)
             }
 
+        // 사용자의 탄단지 설정
+        db.collection(auth?.currentUser?.email.toString()).document("Info")
+            .get().addOnSuccessListener {
+
+                val basickcal: Int = it["basiccal"].toString().toDouble().toInt()
+
+                binding.restKcal.text = "오늘의 잔여 칼로리는 ${basickcal}kcal 입니다."
+                var cal: Int = (it["basiccal"].toString().toDouble() * (0.5)).toInt()
+                var pro: Int = (it["basiccal"].toString().toDouble() * (0.3)).toInt()
+                var fat: Int = (it["basiccal"].toString().toDouble() * (0.2)).toInt()
+
+                binding.MaxCal.text = "/" + cal.toString() + "g"
+                binding.MaxPro.text = "/" + pro.toString() + "g"
+                binding.MaxFat.text = "/" + fat.toString() + "g"
+            }
+
         return view
     }
 
@@ -101,6 +122,7 @@ class HomeFragment : Fragment(){
         db.firestoreSettings = settings
     }
 
+    @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("NotifyDataSetChanged")
     private fun initRecycler(){
         Adapter = RecipeAdapter()
@@ -450,6 +472,22 @@ class HomeFragment : Fragment(){
             Log.d("time","랜덤 숫자 : "+ randnum)
             Log.d("time",randnum.toString() + timedatas.toString())
             Log.d("time","")
+        }
+
+        var curTime = LocalDateTime.now()
+        val formatter = DateTimeFormatter.ofPattern("hh:mm:ss")
+        val formatted = curTime.format(formatter)
+        Log.d("hour:min:sec = ",formatted)
+
+        if (formatted == "23:59:10"){
+            randnum.clear()
+            while(randnum.size<4){ randnum.add((1..datas.size).random())}
+            for (i in 0..3){
+                timedatas.add(i,datas[randnum.sorted()[i]])
+                Log.d("time","랜덤 숫자 : "+ randnum)
+                Log.d("time",randnum.toString() + timedatas.toString())
+                Log.d("time","")
+            }
         }
 
         Adapter.dataList = timedatas

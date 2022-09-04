@@ -168,7 +168,7 @@ class JoinStepOneActivity : AppCompatActivity() {
                 if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                     navigateGallery()
                 else
-                    Toast.makeText(this,"권한을 거부하셨습니다.",Toast.LENGTH_SHORT)
+                    Toast.makeText(this,"권한을 거부하셨습니다.",Toast.LENGTH_SHORT).show()
             }
             else ->{
                 //

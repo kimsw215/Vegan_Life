@@ -19,6 +19,7 @@ import kr.ac.kpu.ce2019152012.vegan_life.R
 import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentCalendarFoodinputdetailBinding
 import java.time.LocalDate
 import java.util.*
+import kotlin.collections.HashMap
 
 class FoodAddDetailFragment : Fragment() {
     private var _binding: FragmentCalendarFoodinputdetailBinding? = null
@@ -40,14 +41,7 @@ class FoodAddDetailFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         setup()
 
-        // 날짜 설정
-        val current : LocalDate =
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-                LocalDate.now()
-            } else {
-                TODO("VERSION.SDK_INT < O")
-            }
-        var date = current.toString()
+
 
         return view
     }
@@ -55,19 +49,39 @@ class FoodAddDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.nextBtn.setOnClickListener {
+            var dattime: String? = arguments?.getString("Timetype")
+            var time_sub = dattime?.substring(dattime.length-2 until dattime.length)
+//            var time:String = dattime!!.slice(dattime.length-2 until dattime.length)
+
+            var Capacity : String= binding.inputCapacity.text.toString()
+
             datas.add(
-                CalendarFoodDataVo(0,null,
-                    binding.inputName.toString(),"",
-                    binding.inputKcal.toString().toInt(),binding.inputCapacity.toString().toInt(),
-                    binding.inputCar.toString().toInt(),binding.inputProtein.toString().toInt(),
-                    binding.inputFat.toString().toInt())
+                CalendarFoodDataVo(
+                    time_sub,null,
+                    binding.inputName.text.toString(),dattime,
+                    binding.inputKcal.text.toString().toInt(), Capacity,
+                    binding.inputCar.text.toString().toInt(), binding.inputProtein.text.toString().toInt(),
+                    binding.inputFat.text.toString().toInt())
             )
+
+            var FoodData = hashMapOf(
+                "Timetype" to datas[0].timetype,
+                "foodPhoto" to datas[0].foodphoto,
+                "foodName" to datas[0].foodname,
+                "Day" to datas[0].day,
+                "Kcal" to datas[0].kcal,
+                "Capacity" to datas[0].gml,
+                "Car" to datas[0].car,
+                "Pro" to datas[0].protein,
+                "Fat" to datas[0].fat
+            )
+            db.collection(auth?.currentUser?.email.toString()).document(dattime.toString())
+                .set(FoodData, SetOptions.merge())
+
             val bundle = Bundle()
             bundle.putParcelable("item",datas[0])
             view?.findNavController()?.navigate(R.id.action_foodinputdetailFragment_to_foodInputFragment,bundle)
                 .run {
-                    db.collection(auth?.currentUser?.email.toString()).document(binding.inputName.toString())
-                        .set(datas, SetOptions.merge())
                 }
         }
     }
@@ -75,29 +89,6 @@ class FoodAddDetailFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
-    }
-
-    private fun doDayOfWeek(): String? {
-        val cal: Calendar = Calendar.getInstance()
-        var strWeek: String? = null
-        val nWeek: Int = cal.get(Calendar.DAY_OF_WEEK)
-
-        if (nWeek == 1) {
-            strWeek = "일"
-        } else if (nWeek == 2) {
-            strWeek = "월"
-        } else if (nWeek == 3) {
-            strWeek = "화"
-        } else if (nWeek == 4) {
-            strWeek = "수"
-        } else if (nWeek == 5) {
-            strWeek = "목"
-        } else if (nWeek == 6) {
-            strWeek = "금"
-        } else if (nWeek == 7) {
-            strWeek = "토"
-        }
-        return strWeek
     }
 
     fun setup() {
