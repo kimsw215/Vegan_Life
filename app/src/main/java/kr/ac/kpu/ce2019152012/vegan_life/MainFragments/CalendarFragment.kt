@@ -1,5 +1,6 @@
 package kr.ac.kpu.ce2019152012.vegan_life.MainFragments
 
+import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -8,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
+import com.bumptech.glide.Glide
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
@@ -25,6 +27,10 @@ class CalendarFragment : Fragment() {
 
     private var auth: FirebaseAuth? = null
     private lateinit var db: FirebaseFirestore
+
+    private var SumCar: Int= 0
+    private var SumPro: Int= 0
+    private var SumFat: Int= 0
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -64,6 +70,107 @@ class CalendarFragment : Fragment() {
                 binding.fatKcal.text = "/" + fat.toString() + "g"
             }
 
+        // 현재 섭취한 탄단지 설정
+        var todayMor : String = binding.datetime.text.toString() + "아침"
+        var todayLun : String = binding.datetime.text.toString() + "점심"
+        var todayEve : String = binding.datetime.text.toString() + "저녁"
+        var todaySna : String = binding.datetime.text.toString() + "간식"
+
+/*        db.collection(auth?.currentUser?.email.toString()).document(todayMor)
+            .get().addOnSuccessListener {
+                if(it["Car"].toString().toInt() != null){
+                    SumCar += it["Car"].toString().toInt()
+                } else {SumCar = 0}
+
+                if(it["Pro"].toString().toInt() != null){
+                    SumPro += it["Pro"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Fat"].toString().toInt() != null){
+                    SumFat += it["Fat"].toString().toInt()
+                } else {SumCar = 0}
+            }
+
+        db.collection(auth?.currentUser?.email.toString()).document(todayLun)
+            .get().addOnSuccessListener {
+                if(it["Car"].toString().toInt() != null){
+                    SumCar += it["Car"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Pro"].toString().toInt() != null){
+                    SumPro += it["Pro"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Fat"].toString().toInt() != null){
+                    SumFat += it["Fat"].toString().toInt()
+                } else {SumCar = 0}
+            }
+
+        db.collection(auth?.currentUser?.email.toString()).document(todayEve)
+            .get().addOnSuccessListener {
+                if(it["Car"].toString().toInt() != null){
+                    SumCar += it["Car"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Pro"].toString().toInt() != null){
+                    SumPro += it["Pro"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Fat"].toString().toInt() != null){
+                    SumFat += it["Fat"].toString().toInt()
+                } else {SumCar = 0}
+            }
+
+        db.collection(auth?.currentUser?.email.toString()).document(todaySna)
+            .get().addOnSuccessListener {
+                if(it["Car"].toString().toInt() != null){
+                    SumCar += it["Car"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Pro"].toString().toInt() != null){
+                    SumPro += it["Pro"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Fat"].toString().toInt() != null){
+                    SumFat += it["Fat"].toString().toInt()
+                } else {SumCar = 0}
+            }*/
+
+        binding.carIntakeKacl.setText(SumCar.toString())
+        binding.proteinIntakeKcal.setText(SumPro.toString())
+        binding.fatIntakeKacl.setText(SumFat.toString())
+
+        Log.d("ima","아침 음식 사진: "+binding.breakfastImage.drawable.toString())
+
+        // 아침 점심 저녁 간식 화면 구성하기
+        if(binding.breakfastImage.drawable != null){
+            db.collection(auth?.currentUser?.email.toString()).document(todayMor)
+                .get().addOnSuccessListener {
+                    var foodKcal = it["Kcal"].toString()
+
+                    Glide.with(this).load(it["foodPhoto"]).into(binding.breakfastImage)
+                    binding.breakfastKcal.setText(foodKcal)
+                }
+        }
+        if(binding.lunchImage.drawable != null){
+            db.collection(auth?.currentUser?.email.toString()).document(todayLun)
+                .get().addOnSuccessListener {
+                    var foodKcal = it["Kcal"].toString()
+                    binding.lunchImage.setImageResource(it["foodPhoto"].toString().toInt())
+                    binding.lunchKacl.setText(foodKcal)
+                }
+        }
+        if(binding.dinnerImage.drawable != null){
+            db.collection(auth?.currentUser?.email.toString()).document(todayEve)
+                .get().addOnSuccessListener {
+                    var foodKcal = it["Kcal"].toString()
+                    binding.dinnerImage.setImageResource(it["foodPhoto"].toString().toInt())
+                    binding.dinnerKcal.setText(foodKcal)
+                }
+        }
+        if(binding.snackImage.drawable != null){
+            db.collection(auth?.currentUser?.email.toString()).document(todaySna)
+                .get().addOnSuccessListener {
+                    var foodKcal = it["Kcal"].toString()
+                    binding.snackImage.setImageResource(it["foodPhoto"].toString().toInt())
+                    binding.snackKcal.setText(foodKcal)
+                }
+        }
+
+
         return view
     }
 
@@ -78,8 +185,6 @@ class CalendarFragment : Fragment() {
                 bundle.putString("daytime",timelist)
                 Log.d("time",timelist.slice(timelist.length-2 until timelist.length))
                 view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodInputFragment,bundle)
-                    .run {
-                        bundle.clear() }
             } else {
                 view?.findNavController()?.navigate(R.id.action_calendarFragment_to_foodinfoFragment,bundle)
             }

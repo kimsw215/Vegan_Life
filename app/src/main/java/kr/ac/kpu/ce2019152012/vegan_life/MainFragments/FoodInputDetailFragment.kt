@@ -57,7 +57,7 @@ class FoodAddDetailFragment : Fragment() {
 
             datas.add(
                 CalendarFoodDataVo(
-                    time_sub,null,
+                    time_sub,0,
                     binding.inputName.text.toString(),dattime,
                     binding.inputKcal.text.toString().toInt(), Capacity,
                     binding.inputCar.text.toString().toInt(), binding.inputProtein.text.toString().toInt(),

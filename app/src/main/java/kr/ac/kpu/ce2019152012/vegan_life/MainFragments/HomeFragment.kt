@@ -29,6 +29,7 @@ import kr.ac.kpu.ce2019152012.vegan_life.Adapter.RecipeAdapter
 import kr.ac.kpu.ce2019152012.vegan_life.DataVo.RecipeDataVo
 import kr.ac.kpu.ce2019152012.vegan_life.R
 import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentHomeBinding
+import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -48,6 +49,10 @@ class HomeFragment : Fragment(){
     val datas = mutableListOf<RecipeDataVo>()
     val timedatas = mutableListOf<RecipeDataVo>()
     val randnum = mutableSetOf<Int>()
+
+    private var SumCar: Int= 0
+    private var SumPro: Int= 0
+    private var SumFat: Int= 0
 
     // 시간 변수
     var _context: Context? = null
@@ -99,6 +104,77 @@ class HomeFragment : Fragment(){
                 binding.MaxPro.text = "/" + pro.toString() + "g"
                 binding.MaxFat.text = "/" + fat.toString() + "g"
             }
+
+        val current : LocalDate =
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                LocalDate.now()
+            } else {
+                TODO("VERSION.SDK_INT < O")
+            }
+        var date = current.toString()
+
+        // 현재 섭취한 탄단지 설정
+        var todayMor : String = date + "아침"
+        var todayLun : String = date + "점심"
+        var todayEve : String = date + "저녁"
+        var todaySna : String = date + "간식"
+
+/*        db.collection(auth?.currentUser?.email.toString()).document(todayMor)
+            .get().addOnSuccessListener {
+                if(it["Car"].toString().toInt() == null){
+                    SumCar += it["Car"].toString().toInt()
+                } else {SumCar = 0}
+
+                if(it["Pro"].toString().toInt() != null){
+                    SumPro += it["Pro"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Fat"].toString().toInt() != null){
+                    SumFat += it["Fat"].toString().toInt()
+                } else {SumCar = 0}
+            }
+
+        db.collection(auth?.currentUser?.email.toString()).document(todayLun)
+            .get().addOnSuccessListener {
+                if(it["Car"].toString().toInt() != null){
+                    SumCar += it["Car"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Pro"].toString().toInt() != null){
+                    SumPro += it["Pro"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Fat"].toString().toInt() != null){
+                    SumFat += it["Fat"].toString().toInt()
+                } else {SumCar = 0}
+            }
+
+        db.collection(auth?.currentUser?.email.toString()).document(todayEve)
+            .get().addOnSuccessListener {
+                if(it["Car"].toString().toInt() != null){
+                    SumCar += it["Car"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Pro"].toString().toInt() != null){
+                    SumPro += it["Pro"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Fat"].toString().toInt() != null){
+                    SumFat += it["Fat"].toString().toInt()
+                } else {SumCar = 0}
+            }
+
+        db.collection(auth?.currentUser?.email.toString()).document(todaySna)
+            .get().addOnSuccessListener {
+                if(it["Car"].toString().toInt() != null){
+                    SumCar += it["Car"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Pro"].toString().toInt() != null){
+                    SumPro += it["Pro"].toString().toInt()
+                } else {SumCar = 0}
+                if(it["Fat"].toString().toInt() != null){
+                    SumFat += it["Fat"].toString().toInt()
+                } else {SumCar = 0}
+            }*/
+
+        binding.textView7.setText(SumCar.toString())
+        binding.textView9.setText(SumPro.toString())
+        binding.textView12.setText(SumFat.toString())
 
         return view
     }
@@ -462,8 +538,8 @@ class HomeFragment : Fragment(){
                     "1 두유유청 휘저어서 거품 만들어 주기\n2 코코넛 슈가 30g + 오일 25ml 넣어 잘 섞어준다. 코코넛 슈가는 더 많이 넣어줘도 될 듯 하다. 40~60g 정도까지..너무 달지않고 담백했음 ㅎㅎ 두유 유청에 넣어 잘 섞어준다.\n3 바나나는 껍질을 벗기고 잘 으깨준다. 원하는 크기로 으깬 후 액체류에 잘 섞어준다.\n4 통밀가루 240g 체에 쳐서 넣고, 베이킹 소다 1스푼, 시나몬 가루 1스푼, 가루류를 넣고 잘 섞는다. 이때 반드시 많이 섞지 말것!! 많이 섞으면 떡같은 질감이 된다.\n2분 동안 섞었는데도 떡이 되어버렸으니 1분 이내로 날가루만 안보일정도로 대충 섞어주길 추천\n5 팬에 넣고 원하는 토핑을 올린다. 바나나 슬라이스를 올려도 되고, 나는 오트밀과 시나문가루, 코코넛 슈가를 뿌려주었다.\n6 180도에서 50분 동안 익혀준다. \n"
                 )
             )
-            /*Adapter.dataList = datas
-            Adapter.notifyDataSetChanged()*/
+            Adapter.dataList = datas
+            Adapter.notifyDataSetChanged()
         }
 
         while(randnum.size<4){ randnum.add((1..datas.size).random())}

@@ -7,7 +7,7 @@ import kotlinx.parcelize.Parcelize
 @Parcelize
 data class CalendarFoodDataVo(
     val timetype: String?,
-    val foodphoto: Uri? = null,
+    val foodphoto: Int? = null,
     val foodname: String,
     val day: String?,
     val kcal: Int?,
