@@ -145,14 +145,26 @@ class JoinStepOneActivity : AppCompatActivity() {
         binding.nextBtn.setOnClickListener {
             if(NickNameCheck && EmailCheck && PasswordCheck && Password2Check){
 
-                val Data = JoinDataVo(ImageCheck,binding.joinNickname.text.toString().trim(),
-                    binding.joinEmail.text.toString().trim(),binding.joinPw.text.toString().trim())
-
                 // 정보 넘겨 줄 때 사진이 있는 지 없는 지 체크 후 있으면 uri 그대로 보내고 아니면 0 보내기기
 
-               val intent = Intent(this,JoinStepTwoActivity::class.java)
-                intent.putExtra("Join",Data)
-                startActivity(intent)
+                if(ImgUri != null){
+                    val Data = JoinDataVo(ImgUri,binding.joinNickname.text.toString().trim(),
+                        binding.joinEmail.text.toString().trim(),binding.joinPw.text.toString().trim())
+
+
+                    val intent = Intent(this,JoinStepTwoActivity::class.java)
+                    intent.putExtra("Join",Data)
+                    startActivity(intent)
+                } else {
+                    val Data = JoinDataVo(null,binding.joinNickname.text.toString().trim(),
+                        binding.joinEmail.text.toString().trim(),binding.joinPw.text.toString().trim())
+
+                    val intent = Intent(this,JoinStepTwoActivity::class.java)
+                    intent.putExtra("Join",Data)
+                    startActivity(intent)
+                }
+
+
             } else{
                 Toast.makeText(this,"필수정보가 미기입되어있습니다.",Toast.LENGTH_SHORT).show()
             }

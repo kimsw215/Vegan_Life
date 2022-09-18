@@ -6,7 +6,7 @@ import kotlinx.parcelize.Parcelize
 
 @Parcelize
 data class JoinDataVo(
-    val profileImage: Int ?= null,
+    val profileImage: Uri ?= null,
     val nickname: String,
     val email: String,
     val password: String

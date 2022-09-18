@@ -1,18 +1,19 @@
 package kr.ac.kpu.ce2019152012.vegan_life.Login_Join
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.ImageButton
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.FirebaseUser
+import com.google.firebase.auth.UserInfo
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.SetOptions
+import com.google.firebase.firestore.core.Filter
 import com.google.firebase.firestore.ktx.firestoreSettings
 import kr.ac.kpu.ce2019152012.vegan_life.DataVo.JoinDataVo
-import kr.ac.kpu.ce2019152012.vegan_life.R
+import kr.ac.kpu.ce2019152012.vegan_life.DataVo.JoinInfoDataVo
 import kr.ac.kpu.ce2019152012.vegan_life.databinding.ActivityJoinTwoBinding
 
 class JoinStepTwoActivity : AppCompatActivity() {
@@ -22,16 +23,15 @@ class JoinStepTwoActivity : AppCompatActivity() {
     private var auth: FirebaseAuth? = null
     private lateinit var db : FirebaseFirestore
 
+    val datas = mutableListOf<JoinInfoDataVo>()
+
+    var basicCal: Int = 0
+
     var VeganType: Int = 0
     /*
     vegan = 1 , lacto = 2 , obo = 3 , lactoObo = 4 , fesco = 5
     */
     var SexType: Int = 0
-    /*
-    female = 2 , male = 1
-    */
-    var basicCal: Double = 0.0
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityJoinTwoBinding.inflate(layoutInflater)
@@ -117,7 +117,7 @@ class JoinStepTwoActivity : AppCompatActivity() {
 
             if(binding.txtFemale.isSelected){
                 SexType = 2
-                basicCal = 655.1 + (9.56 * binding.joinWeight.text.toString().toDouble()) + (1.85 * binding.joinHeight.text.toString().toDouble()) - (4.68 * binding.joinAge.text.toString().toDouble())
+                basicCal = (655.1 + (9.56 * binding.joinWeight.text.toString().toDouble()) + (1.85 * binding.joinHeight.text.toString().toDouble()) - (4.68 * binding.joinAge.text.toString().toDouble())).toInt()
                 Log.d("JoinInfo"," 키 " + binding.joinHeight.text.toString() +" 몸무게 " + binding.joinWeight.text.toString()
                         + " 나이 " + binding.joinAge.text.toString() + "기초대사량" + basicCal.toString())
             } else {
@@ -130,9 +130,9 @@ class JoinStepTwoActivity : AppCompatActivity() {
 
             if(binding.txtMale.isSelected){
                 SexType = 1
-                basicCal = 66.47 + (13.75 * binding.joinWeight.text.toString().toDouble()) + (5.0 * binding.joinHeight.text.toString().toDouble()) - (6.76 * binding.joinAge.text.toString().toDouble())
+                basicCal = (66.47 + (13.75 * binding.joinWeight.text.toString().toDouble()) + (5.0 * binding.joinHeight.text.toString().toDouble()) - (6.76 * binding.joinAge.text.toString().toDouble())).toInt()
                 Log.d("JoinInfo"," 키 " + binding.joinHeight.text.toString() +" 몸무게 " + binding.joinWeight.text.toString()
-                        + " 나이 " + binding.joinAge.text.toString() + "기초대사량" + basicCal.toString())
+                        + " 나이 " + binding.joinAge.text.toString() + "기초대사량 " + basicCal.toString())
             } else {
                 SexType = 0
             }
@@ -154,20 +154,28 @@ class JoinStepTwoActivity : AppCompatActivity() {
                     "passwd" to myData?.password,
                     "nickname" to myData?.nickname,
                     "image" to myData?.profileImage,
-                    "height" to binding.joinHeight.text,
-                    "weight" to binding.joinWeight.text,
-                    "age" to binding.joinAge.text,
-                    "basiccal" to basicCal,
-                    "vegantype" to VeganType,
-                    "sex" to SexType
+                    "height" to binding.joinHeight.text.toString().toInt(),
+                    "weight" to binding.joinWeight.text.toString().toInt(),
+                    "age" to binding.joinAge.text.toString().toInt(),
+                    "basiccal" to basicCal.toString().toInt().toDouble(),
+                    "vegantype" to VeganType.toString().toInt(),
+                    "sex" to SexType.toString().toInt()
                 )
+                Log.d("User",UserInformation.toString())
+/*                datas.add(
+                    JoinInfoDataVo(myData?.email.toString(), myData?.password.toString(), myData?.nickname.toString(),
+                    myData?.profileImage, binding.joinHeight.text.toString().toInt(), binding.joinWeight.text.toString().toInt(),
+                    binding.joinAge.text.toString().toInt(), basicCal.toString().toInt().toDouble(), VeganType.toString().toInt(),
+                    SexType.toString().toInt())
+                )*/
+
 
                 db.collection(myData!!.email).document("Info")
-                    .set(UserInformation)
-                    .addOnCanceledListener { Log.d(TAG, "DocumentSnapshot successfully written!")}
+                    .set(UserInformation, SetOptions.merge())
+                    .addOnSuccessListener { Log.d(TAG, "DocumentSnapshot successfully written!")}
                     .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e)  }
 
-                createUser(myData.email,myData.password)
+                createUser(myData!!.email,myData.password)
                 val intent = Intent(this,JoinCompleteActivity::class.java)
                 startActivity(intent)
             }

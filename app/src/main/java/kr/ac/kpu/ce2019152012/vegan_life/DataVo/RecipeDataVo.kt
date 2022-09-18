@@ -9,5 +9,6 @@ data class RecipeDataVo(
     val recipename: String?,
     val recipephoto: Int,
     val ingredient: String?,
-    val how: String?
+    val how: String?,
+    val type: String
 ) : Parcelable
