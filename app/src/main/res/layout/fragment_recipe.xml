@@ -32,6 +32,20 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+            <ImageView
+                android:id="@+id/search_btn"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="100dp"
+                android:layout_marginTop="5dp"
+                android:src="@drawable/search"
+                app:layout_constraintBottom_toBottomOf="@+id/txt_title"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.289"
+                app:layout_constraintStart_toEndOf="@+id/txt_title"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.0" />
+
             <LinearLayout
                 android:id="@+id/linearLayout"
                 android:layout_width="match_parent"
@@ -45,27 +59,17 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 
-            <androidx.appcompat.widget.SearchView
-                android:id="@+id/search_recipe"
-                android:layout_width="380dp"
-                android:layout_height="40dp"
-                android:layout_marginTop="36dp"
-                android:background="@drawable/search_background"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.492"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txt_title" />
 
             <HorizontalScrollView
                 android:id="@+id/horizontalScrollView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="44dp"
                 android:scrollbars="none"
-                app:layout_constraintEnd_toEndOf="@+id/search_recipe"
-                app:layout_constraintHorizontal_bias="0.483"
-                app:layout_constraintStart_toStartOf="@+id/search_recipe"
-                app:layout_constraintTop_toBottomOf="@+id/search_recipe">
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txt_title">
 
                 <LinearLayout
                     android:id="@id/active_group"
