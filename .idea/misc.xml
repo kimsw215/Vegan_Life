@@ -58,11 +58,17 @@
         <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_join_one.xml" value="0.175" />
         <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_join_two.xml" value="0.17916666666666667" />
         <entry key="..\:/vegan_life_Project/app/src/main/res/layout/activity_main.xml" value="0.3333333333333333" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragement_calendar_foodsearch.xml" value="0.178125" />
         <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_calendar_foodinput.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_calendar_foodinputdetail.xml" value="0.17916666666666667" />
         <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_community_input.xml" value="0.17916666666666667" />
         <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_recipe.xml" value="0.16666666666666666" />
         <entry key="..\:/vegan_life_Project/app/src/main/res/layout/fragment_recipe_search.xml" value="0.178125" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/home_listview.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/recipe_listview.xml" value="0.17916666666666667" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/rv_search_listview.xml" value="0.178125" />
+        <entry key="..\:/vegan_life_Project/app/src/main/res/layout/search_listview.xml" value="0.17916666666666667" />
       </map>
     </option>
   </component>
