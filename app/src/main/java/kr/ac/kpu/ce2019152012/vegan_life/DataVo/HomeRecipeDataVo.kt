@@ -5,10 +5,10 @@ import android.os.Parcelable
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
-data class RecipeDataVo(
+data class HomeRecipeDataVo(
     val recipename: String?,
     val recipephoto: Int,
     val ingredient: String?,
     val how: String?,
-    val type: Int
+    val type: String
 ) : Parcelable

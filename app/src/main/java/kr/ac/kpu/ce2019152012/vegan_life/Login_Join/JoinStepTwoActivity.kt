@@ -23,8 +23,6 @@ class JoinStepTwoActivity : AppCompatActivity() {
     private var auth: FirebaseAuth? = null
     private lateinit var db : FirebaseFirestore
 
-    val datas = mutableListOf<JoinInfoDataVo>()
-
     var basicCal: Int = 0
 
     var VeganType: Int = 0

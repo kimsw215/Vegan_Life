@@ -1,38 +1,30 @@
 package kr.ac.kpu.ce2019152012.vegan_life.Adapter
 
-import android.content.BroadcastReceiver
-import android.content.Context
-import android.content.Intent
-import android.os.IBinder
-import android.util.Log
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.*
-import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.SetOptions
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.firestoreSettings
 import com.google.firebase.ktx.Firebase
-import kr.ac.kpu.ce2019152012.vegan_life.Classes.mutli_type1
-import kr.ac.kpu.ce2019152012.vegan_life.DataVo.RecipeDataVo
+import kr.ac.kpu.ce2019152012.vegan_life.DataVo.HomeRecipeDataVo
 import kr.ac.kpu.ce2019152012.vegan_life.R
 
-class RecipeAdapter:
-    RecyclerView.Adapter<RecipeAdapter.ViewHolder>() {
+class HomeRecipeAdapter:
+    RecyclerView.Adapter<HomeRecipeAdapter.ViewHolder>() {
 
     private var auth: FirebaseAuth? = null
     private lateinit var db: FirebaseFirestore
 
-    var dataList = mutableListOf<RecipeDataVo>()
+    var dataList = mutableListOf<HomeRecipeDataVo>()
 
     interface OnItemClickListener {
-        fun onItemClick(v: View, data: RecipeDataVo, pos: Int)
+        fun onItemClick(v: View, data: HomeRecipeDataVo, pos: Int)
     }
 
     private var listener : OnItemClickListener?= null
@@ -45,10 +37,6 @@ class RecipeAdapter:
     }
 
     override fun getItemCount(): Int = dataList.size
-
-    override fun getItemViewType(position: Int): Int {
-        return dataList[position].type
-    }
 
     // viewType은 변수명 그대로 viewType에 의해 구분되어 들어오는 값
     // onCreateViewHolder가 호출 전 getItemViewType(position: Int):Int 함수를 먼저 호출하며
@@ -63,7 +51,7 @@ class RecipeAdapter:
         private val photo = itemView.findViewById<ImageView>(R.id.rv_photo)
         private val name = itemView.findViewById<TextView>(R.id.rv_name)
 
-        fun bind(item: RecipeDataVo){
+        fun bind(item: HomeRecipeDataVo){
             name.text = item.recipename
             Glide.with(itemView).load(item.recipephoto).into(photo)
 
