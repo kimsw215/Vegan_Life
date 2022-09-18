@@ -163,7 +163,7 @@ class JoinStepTwoActivity : AppCompatActivity() {
                 )
 
                 db.collection(myData!!.email).document("Info")
-                    .set(UserInformation, SetOptions.merge())
+                    .set(UserInformation)
                     .addOnCanceledListener { Log.d(TAG, "DocumentSnapshot successfully written!")}
                     .addOnFailureListener { e -> Log.w(TAG, "Error writing document", e)  }
 

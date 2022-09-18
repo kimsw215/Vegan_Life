@@ -95,9 +95,9 @@ class HomeFragment : Fragment(){
                 basickcal = it["basiccal"].toString().toDouble().toInt()
 
                 binding.restKcal.text = "오늘의 잔여 칼로리는 ${basickcal}kcal 입니다."
-                var cal: Int = (it["basiccal"].toString().toDouble() * (0.5)).toInt()
-                var pro: Int = (it["basiccal"].toString().toDouble() * (0.3)).toInt()
-                var fat: Int = (it["basiccal"].toString().toDouble() * (0.2)).toInt()
+                var cal: Int = (it["basiccal"].toString().toDouble() * (0.5) / 4 ).toInt()
+                var pro: Int = (it["basiccal"].toString().toDouble() * (0.3) / 4 ).toInt()
+                var fat: Int = (it["basiccal"].toString().toDouble() * (0.2) / 9 ).toInt()
 
                 binding.MaxCal.text = "/" + cal.toString() + "g"
                 binding.MaxPro.text = "/" + pro.toString() + "g"

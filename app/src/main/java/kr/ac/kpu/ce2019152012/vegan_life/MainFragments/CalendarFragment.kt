@@ -61,9 +61,9 @@ class CalendarFragment : Fragment() {
         // 사용자의 탄단지 설정
         db.collection(auth?.currentUser?.email.toString()).document("Info")
             .get().addOnSuccessListener {
-                var cal: Int = (it["basiccal"].toString().toDouble() * (0.5)).toInt()
-                var pro: Int = (it["basiccal"].toString().toDouble() * (0.3)).toInt()
-                var fat: Int = (it["basiccal"].toString().toDouble() * (0.2)).toInt()
+                var cal: Int = (it["basiccal"].toString().toDouble() * (0.5) / 4).toInt()
+                var pro: Int = (it["basiccal"].toString().toDouble() * (0.3) / 4).toInt()
+                var fat: Int = (it["basiccal"].toString().toDouble() * (0.2) / 9).toInt()
 
                 binding.carKcal.text = "/" + cal.toString() + "g"
                 binding.proteinKcal.text = "/" + pro.toString() + "g"
