@@ -39,8 +39,6 @@ class MyFragment : Fragment() {
         auth = FirebaseAuth.getInstance()
         setup()
 
-        var UserList = arrayListOf<String>()
-
         db.collection(auth?.currentUser?.email.toString().trim())
             .document("Info")
             .get()

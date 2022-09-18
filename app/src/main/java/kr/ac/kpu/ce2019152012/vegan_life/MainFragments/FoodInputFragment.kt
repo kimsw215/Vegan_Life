@@ -1,6 +1,5 @@
 package kr.ac.kpu.ce2019152012.vegan_life.MainFragments
 
-import android.annotation.SuppressLint
 import android.app.Activity.RESULT_OK
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -25,6 +24,7 @@ import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.firestore.ktx.firestoreSettings
 import com.google.firebase.ktx.Firebase
+import com.google.firebase.storage.FirebaseStorage
 import kr.ac.kpu.ce2019152012.vegan_life.Adapter.CalendarLineaAdapter
 import kr.ac.kpu.ce2019152012.vegan_life.DataVo.CalendarFoodDataVo
 import kr.ac.kpu.ce2019152012.vegan_life.DataVo.CalendarFoodListDataVo
@@ -34,6 +34,10 @@ import kr.ac.kpu.ce2019152012.vegan_life.databinding.FragmentCalendarFoodinputBi
 class FoodInputFragment : Fragment() {
     private var _binding: FragmentCalendarFoodinputBinding? = null
     private val binding get() = _binding!!
+
+    private var viewFoodfile : View? = null
+    var pickImageFromAlbum = 0
+    var fbStorage : FirebaseStorage? = null
 
     // Uri 받아오기 위한 전역 함수
     private var ImgUri: Uri? = null
@@ -63,6 +67,7 @@ class FoodInputFragment : Fragment() {
 
         FirebaseApp.initializeApp(requireActivity())
         auth = FirebaseAuth.getInstance()
+        fbStorage = FirebaseStorage.getInstance()
 
         setup()
 //        initRecycler()
@@ -78,7 +83,6 @@ class FoodInputFragment : Fragment() {
             binding.delete.setText("삭제")
         }
 
-
         var day = arguments?.getParcelable<CalendarFoodDataVo>("item")?.day.toString()
         var dat_sub = day.substring(0 until day.length - 2)
         Log.d("time", "캘랜더에서 보낸 시간: " + arguments?.getString("daytime").toString())
@@ -92,7 +96,6 @@ class FoodInputFragment : Fragment() {
         } else if (day != null) {
             binding.editDate.setText(dat_sub)
         }
-
         return view
     }
 
@@ -254,6 +257,13 @@ private fun initRecycler(){
     private fun deleteRecycler(data: CalendarFoodListDataVo){
         SelectDataList.remove(data)
         binding.selectedFood.adapter?.notifyDataSetChanged()
+    }*/
+
+/*    fun ImageUpload(view : View, time : String){
+        var imgFileName = auth?.currentUser?.email.toString() + time + "_.png"
+        var storageRef = fbStorage?.reference?.child("images")?.child(imgFileName)
+
+        storageRef?.putFile()
     }*/
 
     override fun onDestroyView() {

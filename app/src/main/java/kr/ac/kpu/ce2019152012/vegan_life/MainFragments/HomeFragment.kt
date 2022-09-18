@@ -1,14 +1,9 @@
 package kr.ac.kpu.ce2019152012.vegan_life.MainFragments
 
 import android.annotation.SuppressLint
-import android.app.AlarmManager
-import android.content.BroadcastReceiver
 import android.content.Context
-import android.content.Intent
-import android.content.IntentFilter
 import android.os.Build
 import android.os.Bundle
-import android.os.IBinder
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -54,6 +49,8 @@ class HomeFragment : Fragment(){
     private var SumPro: Int= 0
     private var SumFat: Int= 0
 
+    var basickcal: Int = 0
+
     // 시간 변수
     var _context: Context? = null
 
@@ -68,7 +65,7 @@ class HomeFragment : Fragment(){
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentHomeBinding.inflate(inflater, container, false)
         val view = binding.root
 
@@ -92,8 +89,10 @@ class HomeFragment : Fragment(){
         // 사용자의 탄단지 설정
         db.collection(auth?.currentUser?.email.toString()).document("Info")
             .get().addOnSuccessListener {
+                Log.d("Infor","기초대사량 : " +it["basickcal"].toString())
+                Log.d("Infor","닉네임 : " + it["nickname"].toString())
 
-                val basickcal: Int = it["basiccal"].toString().toDouble().toInt()
+                basickcal = it["basiccal"].toString().toDouble().toInt()
 
                 binding.restKcal.text = "오늘의 잔여 칼로리는 ${basickcal}kcal 입니다."
                 var cal: Int = (it["basiccal"].toString().toDouble() * (0.5)).toInt()
@@ -570,7 +569,7 @@ class HomeFragment : Fragment(){
         Adapter.notifyDataSetChanged()
 
         Adapter.setOnItemClickListener(object : RecipeAdapter.OnItemClickListener {
-            override fun onItemClick(v: View, data: RecipeDataVo, post: Int) {
+            override fun onItemClick(v: View, data: RecipeDataVo, pos: Int) {
                 val bundle = Bundle()
                 bundle.putParcelable("item",data)
                 view?.findNavController()?.navigate(R.id.action_homeFragment_to_recipeNextFragment,bundle)

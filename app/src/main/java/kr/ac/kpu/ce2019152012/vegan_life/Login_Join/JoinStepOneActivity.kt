@@ -5,11 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.graphics.Color
 import android.graphics.Paint
 import android.net.Uri
 import android.os.Build
-import android.os.Parcelable
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
@@ -17,14 +15,15 @@ import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.core.content.ContextCompat
-import androidx.core.widget.addTextChangedListener
 import androidx.core.widget.doAfterTextChanged
-import com.bumptech.glide.Glide
+import com.google.firebase.storage.FirebaseStorage
+import com.google.firebase.storage.StorageReference
+import com.google.firebase.storage.UploadTask
 import kr.ac.kpu.ce2019152012.vegan_life.DataVo.JoinDataVo
 import kr.ac.kpu.ce2019152012.vegan_life.R
 import kr.ac.kpu.ce2019152012.vegan_life.databinding.ActivityJoinOneBinding
-import org.w3c.dom.Text
 import java.util.regex.Pattern
+import kotlin.collections.ArrayList
 
 class JoinStepOneActivity : AppCompatActivity() {
     private lateinit var binding : ActivityJoinOneBinding
@@ -33,6 +32,11 @@ class JoinStepOneActivity : AppCompatActivity() {
 
     // Uri 받아오기 위한 전역 함수
     var ImgUri : Uri?= null
+    var ImageCheck = 0
+
+    private var firebaseStore : FirebaseStorage? = null
+    private var storageReference: StorageReference? = null
+
     // 닉네임 참인지 체크
     private var NickNameCheck : Boolean = false
 
@@ -62,6 +66,9 @@ class JoinStepOneActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.joinInsertImage.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+
+         firebaseStore = FirebaseStorage.getInstance()
+         storageReference = FirebaseStorage.getInstance().reference
 
         // 이미지 올리기 버튼을 눌렀을 때 프로필 변경하기
         binding.joinInsertImage.setOnClickListener {
@@ -137,16 +144,13 @@ class JoinStepOneActivity : AppCompatActivity() {
         // 다음 버튼
         binding.nextBtn.setOnClickListener {
             if(NickNameCheck && EmailCheck && PasswordCheck && Password2Check){
-                // 정보 넘겨줘야 됨
-                /*JoinData.apply {
-                    add(JoinDataVo(ImgUri,binding.joinNickname.text.toString().trim(),
-                    binding.joinEmail.text.toString().trim(),binding.joinPw.text.toString().trim()))
-                }*/
-                val Data = JoinDataVo(ImgUri,binding.joinNickname.text.toString().trim(),
+
+                val Data = JoinDataVo(ImageCheck,binding.joinNickname.text.toString().trim(),
                     binding.joinEmail.text.toString().trim(),binding.joinPw.text.toString().trim())
+
                 // 정보 넘겨 줄 때 사진이 있는 지 없는 지 체크 후 있으면 uri 그대로 보내고 아니면 0 보내기기
+
                val intent = Intent(this,JoinStepTwoActivity::class.java)
-//                intent.putParcelableArrayListExtra("Join",JoinData)
                 intent.putExtra("Join",Data)
                 startActivity(intent)
             } else{
@@ -220,6 +224,18 @@ class JoinStepOneActivity : AppCompatActivity() {
             .setNegativeButton("취소"){_, _ ->}
             .create()
             .show()
+    }
+
+    private fun UploadImage(){
+        if(ImgUri != null){
+            var imgFileName = binding.joinEmail.text
+            val ref = storageReference?.child("${binding.joinEmail.toString()}/" +
+                    "ProfileImage")
+            val uploadTask = ref?.putFile(ImgUri!!)
+            ImageCheck = 1
+        } else {
+            Toast.makeText(this,"사진을 등록안했습니다.",Toast.LENGTH_SHORT).show()
+        }
     }
 
     // 이메일 형식 체크
