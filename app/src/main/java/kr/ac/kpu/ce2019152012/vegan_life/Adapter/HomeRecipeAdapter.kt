@@ -7,19 +7,11 @@ import android.view.ViewGroup
 import android.widget.*
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.firestore.FirebaseFirestore
-import com.google.firebase.firestore.ktx.firestore
-import com.google.firebase.firestore.ktx.firestoreSettings
-import com.google.firebase.ktx.Firebase
 import kr.ac.kpu.ce2019152012.vegan_life.DataVo.HomeRecipeDataVo
 import kr.ac.kpu.ce2019152012.vegan_life.R
 
 class HomeRecipeAdapter:
     RecyclerView.Adapter<HomeRecipeAdapter.ViewHolder>() {
-
-    private var auth: FirebaseAuth? = null
-    private lateinit var db: FirebaseFirestore
 
     var dataList = mutableListOf<HomeRecipeDataVo>()
 
@@ -62,12 +54,4 @@ class HomeRecipeAdapter:
         }
     }
 
-    fun setup() {
-        db = Firebase.firestore
-
-        val settings = firestoreSettings {
-            isPersistenceEnabled = true
-        }
-        db.firestoreSettings = settings
-    }
 }

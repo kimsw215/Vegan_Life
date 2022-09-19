@@ -81,6 +81,12 @@ class RecipeFragment : Fragment() , View.OnClickListener{
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.searchBtn.setOnClickListener{
+            view?.findNavController()?.navigate(R.id.action_recipeFragment_to_recipeSearchFragment).run {
+
+            }
+        }
     }
 
     override fun onDestroyView() {

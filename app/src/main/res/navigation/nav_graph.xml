@@ -48,6 +48,9 @@
             app:argType="kr.ac.kpu.ce2019152012.vegan_life.DataVo.RecipeDataVo"
             app:nullable="true"
             android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_recipeFragment_to_recipeSearchFragment"
+            app:destination="@id/recipeSearchFragment" />
     </fragment>
     <fragment
         android:id="@+id/calendarFragment"
@@ -125,5 +128,19 @@
         <action
             android:id="@+id/action_foodinfoFragment_to_foodInputFragment"
             app:destination="@id/foodInputFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeSearchFragment"
+        android:name="kr.ac.kpu.ce2019152012.vegan_life.MainFragments.RecipeSearchFragment"
+        android:label="RecipeSearchFragment"
+        tools:layout="@layout/fragment_recipe_search">
+        <argument
+            android:name="RecipeInfo"
+            app:argType="kr.ac.kpu.ce2019152012.vegan_life.DataVo.RecipeDataVo"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <action
+            android:id="@+id/action_recipeSearchFragment_to_recipeNextFragment"
+            app:destination="@id/recipeNextFragment" />
     </fragment>
 </navigation>
