@@ -572,10 +572,8 @@ class HomeFragment : Fragment() {
                     6
                 )
             )
-
-
-            Adapter.dataList = datas
-            Adapter.notifyDataSetChanged()
+/*            Adapter.dataList = datas
+            Adapter.notifyDataSetChanged()*/
         }
 
         while (randnum.size < 4) {

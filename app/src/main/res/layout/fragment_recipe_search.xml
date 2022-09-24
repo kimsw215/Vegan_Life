@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -63,11 +64,12 @@
                 android:layout_marginTop="28dp"
                 android:clipToPadding="false"
                 app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-                app:layout_constraintEnd_toEndOf="@+id/search_recipe"
+                app:layout_constraintEnd_toEndOf="@+id/linearLayout"
                 app:layout_constraintHorizontal_bias="0.521"
-                app:layout_constraintStart_toStartOf="@+id/search_recipe"
+                app:layout_constraintStart_toStartOf="@+id/linearLayout"
                 app:layout_constraintTop_toBottomOf="@+id/search_recipe"
                 app:spanCount="2"
+                android:paddingLeft="10dp"
                 tools:listitem="@layout/home_listview" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

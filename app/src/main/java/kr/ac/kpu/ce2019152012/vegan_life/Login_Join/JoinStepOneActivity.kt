@@ -246,7 +246,7 @@ class JoinStepOneActivity : AppCompatActivity() {
             val uploadTask = ref?.putFile(ImgUri!!)
             ImageCheck = 1
         } else {
-            Toast.makeText(this,"사진을 등록안했습니다.",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this,"기본 프로필 사진으로 저장합니다.",Toast.LENGTH_SHORT).show()
         }
     }
 

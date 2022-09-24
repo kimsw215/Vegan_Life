@@ -77,8 +77,8 @@ class SearchAdapter(var searchs: ArrayList<CalendarFoodListDataVo>) :
                 results.count = searchs.size
 
                 return results
-                // 공백제외 2글자 이하인 경우 -> 이름으로만 검색
-            } else if (filterString.trim { it <= ' ' }.length <= 2) {
+                // 공백제외 6글자 이하인 경우 -> 이름으로만 검색
+            } else if (filterString.trim { it <= ' ' }.length <= 6) {
                 for (data in searchs){
                     if (data.foodname!!.contains(filterString)){
                         filteredList.add(data)
